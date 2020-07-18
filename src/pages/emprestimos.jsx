@@ -11,6 +11,7 @@ import {
     ThemeProvider,
     Text,
     Link,
+    Icon,
 } from '@chakra-ui/core'
 
 
@@ -45,8 +46,9 @@ export default function Emprestimo() {
                     >
                         <p>
                             <Link color="#d50000" as={GatsbyLink} to="/">Página Inicial</Link>
-                            {" "} 
-                            &#8594; Empréstimos
+                             
+                            <Icon color="#D3D3D3" name="chevron-right" size="20px" verticalAlign="-18%"/>
+                            Empréstimos
                         </p>
                     </Text>
                     <Text 
