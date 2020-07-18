@@ -18,33 +18,41 @@ export default function Emprestimo() {
     return (
         <ThemeProvider>
             <Layout>
-                <Text
-                    maxW="700px"
-                    margin="20px auto 0"
+                <Text 
+                    // maxW="700px"
+                    margin="20px -0.75rem -0.75rem 20px"
                     padding="20px"
                     background="#fff"
+                    fontFamily="Open Sans"
                 >
                     <Text
-                    color="#263238"
-                    fontFamily="Open Sans"
-                    margin="1.14rem 0 0.912rem 0"
-                    fontSize="2.28rem"
-                    lineHeight="110%"
+                        color="#263238"
+                        margin="1.14rem 0 0.912rem 0"
+                        fontSize="2.28rem"
+                        lineHeight="110%"
                     >
                         <h1>Empréstimos</h1>
                     </Text>
 
                     <Text
-                    height="1px"
-                    overflow="hidden"
-                    bg="#e0e0e0"
+                        height="1px"
+                        overflow="hidden"
+                        bg="#e0e0e0"
                     ></Text>
-
                     <Text 
-                    fontFamily="Open Sans"
-                    color="#666"
-                    lineHeight="24px"
-                    mt="5px"
+                        fontSize="15px"
+                        // color="#D3D3D3"
+                    >
+                        <p>
+                            <Link color="#d50000" as={GatsbyLink} to="/">Página Inicial</Link>
+                            {" "} 
+                            &#8594; Empréstimos
+                        </p>
+                    </Text>
+                    <Text 
+                        color="#666"
+                        lineHeight="24px"
+                        mt="5px"
                     >
                         <p>O PET  possui um acervo de itens que podem ser de interesse da comunidade, desde livros-texto de algumas disciplinas a componentes de arduino, que são divididos entre livre uso e uso restrito.</p>
 
@@ -54,7 +62,7 @@ export default function Emprestimo() {
 
                         <p>Importante informar que prezamos bastante pela integridade dos itens, assim como com prazos de entrega, por isso possuímos um sistema de punição, que pode acarretar em banimento do usuário e ele não poderá realizar empréstimos futuros.</p>
 
-                        <p>Se quer saber mais detalhes, ou até mesmo imprimir o formulário de empréstimo, acesse o manual no link.</p>
+                        <p>Se deseja saber mais detalhes, ou até mesmo imprimir o formulário de empréstimo, acesse o manual.</p>
 
                         <Button
                             _hover={{bg: "#a40000"}}
@@ -63,6 +71,8 @@ export default function Emprestimo() {
                         >
                             <Link color="white" href={Manual} isExternal> Manual de Empréstimos </Link> </Button>
                     </Text>
+                    <br />
+                    <br />
                 </Text>
             </Layout>
         </ThemeProvider>
