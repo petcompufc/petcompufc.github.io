@@ -12,7 +12,7 @@ import {
     Text,
     Link,
     Icon,
-} from '@chakra-ui/core'
+} from '@chakra-ui/core';
 
 
 export default function Emprestimo() {
