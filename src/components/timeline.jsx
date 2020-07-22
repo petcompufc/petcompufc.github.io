@@ -1,8 +1,10 @@
 import React from 'react'
+
 import { Tabs, TabList, TabPanels,TabPanel, Tab, PseudoBox } from "@chakra-ui/core";
 
 const Timeline = () =>{
-   const CoolTab = React.forwardRef((props, ref)=>{
+   
+    const CoolTab = React.forwardRef((props, ref)=>{
     return(
         <Tab ref={ref} isSelected={props.isSelected} {...props}>
             {props.isSelected ? " 🤯":"🤔 "}
@@ -10,13 +12,15 @@ const Timeline = () =>{
         </Tab>
     )
    });
+
+
     return(
     <PseudoBox>
       <Tabs variant="soft-rounded">
         <TabList>
-             <CoolTab  _selected={{ color: "white", bg: "red.500" }}>1992</CoolTab>
-             <CoolTab>2021</CoolTab>
-             <CoolTab>3011++</CoolTab>
+             <CoolTab  _selected={{ color: "white", bg: "red.500"}}>O inicio de tudo...</CoolTab>
+             <CoolTab  _selected={{ color: "white", bg: "red.500"}}>O inicio de tudo...</CoolTab>
+             <CoolTab  _selected={{ color: "white", bg: "red.500"}}>O inicio de tudo...</CoolTab>
         </TabList>
 
      <TabPanels>   
