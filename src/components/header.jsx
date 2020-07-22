@@ -6,6 +6,13 @@ import {
   Flex,
   Text,
   Image,
+  Box,
+  useDisclosure,
+  Drawer,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerBody,
+  DrawerHeader,
 } from '@chakra-ui/core';
 
 import logo from '../images/logo-pet-red.png';
@@ -18,7 +25,7 @@ const NavLink = ({ children, href }) => (
     to={href}
     display="grid"
     alignItems="center"
-    px={3}
+    p={2}
     transition="0.3s all"
     _hover={{ bg: '#EDF2F7' }}
     _focus={{ boxShadow: 'none' }}
@@ -33,30 +40,71 @@ const NavLink = ({ children, href }) => (
   </Link>
 );
 
-const Header = ({ siteTitle }) => (
-  <header>
-    <Flex as="nav" w="100%" bg="white" boxShadow="md" justify="space-between">
-      <Link as={GatsbyLink} to="/" my={2} ml="5%" maxW="3rem">
-        <Image
-          src={logo}
-          alt="Logo PET"
-          backgroundSize="contain"
-          m="0"
-        />
-      </Link>
+function Header({ siteTitle }) {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const btnRef = React.useRef();
+  return (
+    <header>
+      <Flex as="nav" w="100%" bg="white" boxShadow="md" justify="space-between">
+        <Link as={GatsbyLink} to="/" my={2} ml="5%" maxW="3rem">
+          <Image
+            src={logo}
+            alt="Logo PET"
+            backgroundSize="contain"
+            m="0"
+          />
+        </Link>
 
-      <Flex mr="5%" wrap="wrap">
-        <NavLink href="/">Inicio</NavLink>
-        <NavLink href="/">Sobre</NavLink>
-        <NavLink href="/">Atividades</NavLink>
-        <NavLink href="/">Blog</NavLink>
-        <NavLink href="/">Certificados</NavLink>
-        <NavLink href="/">Emprestimos</NavLink>
-        <NavLink href="/">Contato</NavLink>
+        <Box ref={btnRef} display={{ xs: 'flex', lg: 'none' }} mr="5%" onClick={onOpen}>
+          <svg
+            fill="black"
+            width="20px"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <title>Menu</title>
+            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+          </svg>
+        </Box>
+        <Drawer
+          isOpen={isOpen}
+          placement="right"
+          onClose={onClose}
+          finalFocusRef={btnRef}
+        >
+          <DrawerOverlay />
+          <DrawerContent>
+            <DrawerHeader
+              fontFamily="Open Sans"
+              borderBottomWidth="2px"
+            >
+              PET Computação
+            </DrawerHeader>
+            <DrawerBody>
+              <NavLink href="/">Inicio</NavLink>
+              <NavLink href="/">Sobre</NavLink>
+              <NavLink href="/">Atividades</NavLink>
+              <NavLink href="/">Blog</NavLink>
+              <NavLink href="/">Certificados</NavLink>
+              <NavLink href="/">Emprestimos</NavLink>
+              <NavLink href="/">Contato</NavLink>
+            </DrawerBody>
+          </DrawerContent>
+        </Drawer>
+
+        <Box display={{ xs: 'none', lg: 'flex' }} mr="5%" wrap="wrap">
+          <NavLink href="/">Inicio</NavLink>
+          <NavLink href="/">Sobre</NavLink>
+          <NavLink href="/">Atividades</NavLink>
+          <NavLink href="/">Blog</NavLink>
+          <NavLink href="/">Certificados</NavLink>
+          <NavLink href="/">Emprestimos</NavLink>
+          <NavLink href="/">Contato</NavLink>
+        </Box>
       </Flex>
-    </Flex>
-  </header>
-);
+    </header>
+  );
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
