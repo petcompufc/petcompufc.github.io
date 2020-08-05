@@ -8,11 +8,21 @@ export default function Midias(){
                 border: 'solid #000 1px',
             }}
         >
-            <a href='https://github.com/petcompufc' target='_Blank'><Box as='img' src='https://github.githubassets.com/pinned-octocat.svg' height='32px' width='32px' borderRadius='50%' marginBottom='0px'/></a>
-            <a href='https://www.facebook.com/497503250349647/photos/2384375954995691' target='_Blank'><Box as='img' src='https://www.facebook.com/images/fb_icon_325x325.png' height='32px' width='32px' borderRadius='50%' marginBottom='0px'/></a>
-            <a href="https://www.instagram.com/petcompufc" target='_Blank'><Box as='img' src='https://instagram.com/static/images/ico/favicon-200.png/ab6eff595bb1.png' height='32px' width='32px' borderRadius='50%' marginBottom='0px'/></a>
-            <a href="https://www.youtube.com/user/petcompufc/videos" target='_Blank'><Box as='img' src='https://s.ytimg.com/yts/img/favicon_144-vfliLAfaB.png' height='32px' width='32px' borderRadius='50%' marginBottom='0px'/></a>
-            <a href="mailto:petcomp@ufc.br" target='_Blank'><Box as='img' src='https://ssl.gstatic.com/ui/v1/icons/mail/images/favicon5.ico' height='32px' width='32px' borderRadius='50%' marginBottom='0px'/></a>
+            <a target='_Blank' href='https://github.com/petcompufc'>
+                <Box as='img' height='32px' width='32px' borderRadius='50%' marginBottom='4px' src='https://github.githubassets.com/pinned-octocat.svg'/>
+            </a>
+            <a target='_Blank' href='https://www.facebook.com/497503250349647/photos/2384375954995691'>
+                <Box as='img' height='32px' width='32px' borderRadius='50%' marginBottom='4px' src='https://www.facebook.com/images/fb_icon_325x325.png'/>
+            </a>
+            <a target='_Blank' href="https://www.instagram.com/petcompufc">
+                <Box as='img' height='32px' width='32px' borderRadius='50%' marginBottom='4px' src='https://instagram.com/static/images/ico/favicon-200.png/ab6eff595bb1.png'/>
+            </a>
+            <a target='_Blank' href="https://www.youtube.com/user/petcompufc/videos">
+                <Box as='img' height='32px' width='32px' borderRadius='50%' marginBottom='4px' src='https://s.ytimg.com/yts/img/favicon_144-vfliLAfaB.png'/>
+            </a>
+            <a target='_Blank' href="mailto:petcomp@ufc.br">
+                <Box as='img' height='32px' width='32px' borderRadius='50%' marginBottom='0px' src='https://ssl.gstatic.com/ui/v1/icons/mail/images/favicon5.ico'/>
+            </a>
         </Stack>
     )
 }
