@@ -85,23 +85,21 @@ export default function Footer() {
         fontWeight="lighter" >
           <ListItem fontSize="18px" fontWeight="bold">Links</ListItem>
           <ListItem> 
-            <Link>
-            Portal UFC
-            </Link>
+            <Link href="http://www.ufc.br/" isExternal color="white">Portal UFC</Link>
           </ListItem>
           <ListItem marginTop="-10px"> 
-            <Link >
-            Departamento de Computação
-            </Link> 
+            <Link href="http://portal.dc.ufc.br/" isExternal color="white">Departamento de Computação</Link> 
           </ListItem>
-          <ListItem marginTop="-10px"> <Link>Curso de Ciência da Computação</Link> </ListItem>
+          <ListItem marginTop="-10px"> 
+            <Link href="https://cc.ufc.br/" isExternal color="white">Curso de Ciência da Computação</Link> 
+          </ListItem>
         </List>
 
         <Box 
         w="25%" 
         marginLeft="auto" >
           <Link href="http://www.ufc.br/" isExternal><Image m="14px 0px 16px 0px" maxW="90%" maxH="90px" display="inline-block" src={ufc_logo} /></Link>
-          <Link href="https://cc.ufc.br/" isExternal><Image m="14px 0px 16px 0px" maxW="90%" maxH="90px" display="inline-block" src={dc_logo} /></Link>
+          <Link href="http://portal.dc.ufc.br/" isExternal><Image m="14px 0px 16px 0px" maxW="90%" maxH="90px" display="inline-block" src={dc_logo} /></Link>
         </Box>
       </Box>
     </Box>
