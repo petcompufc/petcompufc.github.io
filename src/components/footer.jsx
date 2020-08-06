@@ -1,14 +1,21 @@
-import { Link } from 'gatsby';
+// import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 
 import { 
   Box,
   Image,
+  ThemeProvider,
   List,
   ListItem,
+  Link,
   Stack, 
+  IconButton,
 } from '@chakra-ui/core';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMailBulk } from '@fortawesome/free-solid-svg-icons'
+import { faFacebookF, faGithub, faInstagram, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons'
 
 import pet_logo from '../images/logo_pet-white.png';
 import dc_logo from '../images/logo_dc.png';
@@ -16,8 +23,11 @@ import ufc_logo from '../images/logo_ufc.png';
 
 export default function Footer() {
   return (
+    <ThemeProvider>
     <Box 
       bg="#37474f"
+      overflow="hidden"
+      minH="100%"
       maxWidth="960"
       padding="1.45rem 1.0875rem"
       color="#fff"
@@ -50,13 +60,19 @@ export default function Footer() {
         minH="1px"
         spacing="1"
         fontWeight="lighter" >
-          <ListItem fontSize="18px" fontWeight="bold">PET COMPUTAÇÃO</ListItem>
+          <ListItem fontSize="18px" fontWeight="bold" >PET COMPUTAÇÃO</ListItem>
           <ListItem>Av. Humberto Monte, s/n</ListItem>
-          <ListItem>UFC - Campus do Pici</ListItem>
-          <ListItem>Departamento da Computação</ListItem>
-          <ListItem>Bloco 910</ListItem>
-          <ListItem>petcomp@ufc.br</ListItem>
-          <ListItem> <Stack isInline></Stack> </ListItem>
+          <ListItem marginTop="-10px">UFC - Campus do Pici</ListItem>
+          <ListItem marginTop="-10px">Departamento da Computação</ListItem>
+          <ListItem marginTop="-10px">Bloco 910</ListItem>
+          <ListItem marginTop="-10px">petcomp@ufc.br</ListItem>
+          <ListItem marginTop="10px" fontSize="25px"> 
+            <Link href='https://github.com/petcompufc' marginRight="5px" isExternal color="white" textDecoration="initial" > <FontAwesomeIcon icon={faGithub}/></Link>
+            <Link href='https://www.facebook.com/PETCompUFC/' marginRight="5px" marginLeft="5px" isExternal color="white"><FontAwesomeIcon icon={faFacebookF}/></Link>
+            <Link href="https://www.instagram.com/petcompufc" marginRight="5px" marginLeft="5px" isExternal color="white"><FontAwesomeIcon icon={faInstagram} /></Link>
+            <Link href="https://www.youtube.com/user/petcompufc/videos" marginRight="5px" marginLeft="5px" isExternal color="white"><FontAwesomeIcon icon={faYoutube} /></Link>
+            <Link href="mailto:petcomp@ufc.br" marginLeft="5px" isExternal color="white"><FontAwesomeIcon icon={faMailBulk} /></Link>
+          </ListItem>
         </List>
 
         <List 
@@ -73,22 +89,23 @@ export default function Footer() {
             Portal UFC
             </Link>
           </ListItem>
-          <ListItem> 
-            <Link>
+          <ListItem marginTop="-10px"> 
+            <Link >
             Departamento de Computação
             </Link> 
           </ListItem>
-          <ListItem> <Link>Curso de Ciência da Computação</Link> </ListItem>
+          <ListItem marginTop="-10px"> <Link>Curso de Ciência da Computação</Link> </ListItem>
         </List>
 
         <Box 
         w="25%" 
         marginLeft="auto" >
-          <Link href="/"> <Image m="14px 0px 16px 0px" maxW="90%" maxH="90px" display="inline-block" src={ufc_logo} /> </Link>
-          <Link href="/"> <Image m="14px 0px 16px 0px" maxW="90%" maxH="90px" display="inline-block" src={dc_logo} /> </Link>
+          <Link href="http://www.ufc.br/" isExternal><Image m="14px 0px 16px 0px" maxW="90%" maxH="90px" display="inline-block" src={ufc_logo} /></Link>
+          <Link href="https://cc.ufc.br/" isExternal><Image m="14px 0px 16px 0px" maxW="90%" maxH="90px" display="inline-block" src={dc_logo} /></Link>
         </Box>
       </Box>
     </Box>
+    </ThemeProvider>
     );
   }
 
