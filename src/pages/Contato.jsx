@@ -17,7 +17,8 @@ export default function Contato() {
             <ThemeProvider>
                 <Layout id='layout'>
 
-                    <Box paddingX='2%' backgroundImage='url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT4g7Tbaz9lJl_JOS7RdGdXlQFFkRfDH2N6LQ&usqp=CAU)'>
+                    {/*<Box paddingX='2%' backgroundImage='url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT4g7Tbaz9lJl_JOS7RdGdXlQFFkRfDH2N6LQ&usqp=CAU)'>*/}
+                    <Box paddingX='2%' bg='#25BDF5'>
                         <Heading as='h2' color='#263238' marginTop='6%'>Contato</Heading>
                         <Divider />
                         <Breadcrumb spacing='8px' separator={<Icon color="#D3D3D3" size="20px" verticalAlign='-5px' name='chevron-right'/>} fontSize='16px' fontWeight='bold'>
@@ -30,7 +31,8 @@ export default function Contato() {
                         </Breadcrumb>
                     </Box>
 
-                    <Box background='url(https://i1.wp.com/asedpers.org.br/wp-content/uploads/2018/08/gray-texture.jpg?fit=2560%2C1440)'>
+                    {/* // <Box background='url(https://i1.wp.com/asedpers.org.br/wp-content/uploads/2018/08/gray-texture.jpg?fit=2560%2C1440)'> */}
+                    <Box bg='#B0B0B0'>
                         <Heading as='h2' textAlign='center' marginTop='5%' fontFamily='Open sans' color='#5A5A5A'>
                             Fale conosco!
                         </Heading>
@@ -67,7 +69,7 @@ export default function Contato() {
                                 </Flex>
                             </FormControl>
                         </Box>
-                    </Box>
+                        </Box>   
 
 
                     <Box paddingLeft='5%' marginTop='10%' w='100%' h='450px' >

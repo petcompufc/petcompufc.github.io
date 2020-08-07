@@ -11,7 +11,7 @@ export default function Midias(){
             <a target='_Blank' href='https://github.com/petcompufc'>
                 <Box as='img' height='32px' width='32px' borderRadius='50%' marginBottom='4px' src='https://github.githubassets.com/pinned-octocat.svg'/>
             </a>
-            <a target='_Blank' href='https://www.facebook.com/497503250349647/photos/2384375954995691'>
+            <a target='_Blank' href='https://www.facebook.com/PETCompUFC/'>
                 <Box as='img' height='32px' width='32px' borderRadius='50%' marginBottom='4px' src='https://www.facebook.com/images/fb_icon_325x325.png'/>
             </a>
             <a target='_Blank' href="https://www.instagram.com/petcompufc">
