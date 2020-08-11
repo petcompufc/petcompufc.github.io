@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Box, IconButton, Image } from '@chakra-ui/core';
+import { Box, IconButton, Image, Text } from '@chakra-ui/core';
 
 function Carousel({ images }) {
   const [isLocked, setLocked] = useState(false);
@@ -11,10 +11,10 @@ function Carousel({ images }) {
 
   useEffect(() => {
     if (!isLocked) {
-      const i = setInterval(nextSlide, 3000);
+      const i = setInterval(nextSlide, 6000);
       return () => clearInterval(i);
     }
-    return () => {};
+    return () => { };
   });
 
   return (
@@ -32,7 +32,20 @@ function Carousel({ images }) {
           src={image.src}
         />
       ))}
+      <Text 
+      fontSize="50px" 
+      color = "white"
+      pos="absolute"
+      left={2}
+      top="0"
+      bottom="0"
+      my="auto"
+      >
+        Imagem 01 BLA BLA BLA
+      </Text>
       <IconButton
+        variant="outline"
+        variantColor="red"
         aria-label="Go to previous slide"
         icon="arrow-back"
         onClick={prevSlide}
@@ -44,6 +57,8 @@ function Carousel({ images }) {
         my="auto"
       />
       <IconButton
+        variant="outline"
+        variantColor="red"
         aria-label={isLocked ? 'Start slide rotation' : 'Stop slide rotation'}
         icon={isLocked ? 'lock' : 'unlock'}
         onClick={() => setLocked(!isLocked)}
@@ -55,6 +70,8 @@ function Carousel({ images }) {
         mx="auto"
       />
       <IconButton
+        variant="outline"
+        variantColor="red"
         aria-label="Go to next slide"
         icon="arrow-forward"
         onClick={nextSlide}
