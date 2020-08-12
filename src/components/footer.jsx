@@ -11,6 +11,8 @@ import {
   Link,
   Stack, 
   IconButton,
+  Flex,
+  Grid,
 } from '@chakra-ui/core';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -22,45 +24,52 @@ import dc_logo from '../images/logo_dc.png';
 import ufc_logo from '../images/logo_ufc.png';
 
 export default function Footer() {
+
+  const [width, setWidth] = React.useState(innerWidth);
+  React.useEffect(() => {
+    window.addEventListener('resize', ()=>{
+      setWidth(innerWidth)
+    })
+  })
+
   return (
     <ThemeProvider>
     <Box 
       bg="#37474f"
       overflow="hidden"
-      minH="100%"
       maxWidth="960"
       padding="1.45rem 1.0875rem"
       color="#fff"
       width="100%"
     > 
-      <Box
-        width="80%"
-        m="0 auto"
-        boxSizing="inherit"
-        fontSize="14px"
+      <Grid
+        maxW='1280px'
+        w='100%'
+        mx="auto"
+        fontSize="16px"
         fontFamily="Open Sans"
+        templateColumns={width>900? 'repeat(4, 1fr)': width>600? 'repeat(2, 1fr)': 'repeate(1, 1fr)'}
         >
         
         <Box 
-        w="25%" 
+        mx='auto'
         float="left"   
         boxSizing="border-box" 
-        marginLeft="auto" >
-          <Image 
-            maxW="200px" 
+        >
+          <Image
+            w='90%'
+            maxW="300px" 
             src={pet_logo} 
             alt="Logo do pet branca." />
         </Box>
 
-        <List 
-        width="25%" 
-        marginLeft="auto" 
+        <List
+        mx='auto'
         float="left" 
-        padding="0 0.75rem" 
         minH="1px"
         spacing="1"
         fontWeight="lighter" >
-          <ListItem fontSize="18px" fontWeight="bold" >PET COMPUTAÇÃO</ListItem>
+          <ListItem fontSize="24px" fontWeight="bold" >PET COMPUTAÇÃO</ListItem>
           <ListItem>Av. Humberto Monte, s/n</ListItem>
           <ListItem marginTop="-10px">UFC - Campus do Pici</ListItem>
           <ListItem marginTop="-10px">Departamento da Computação</ListItem>
@@ -75,15 +84,13 @@ export default function Footer() {
           </ListItem>
         </List>
 
-        <List 
-        w="25%" 
-        marginLeft="auto" 
-        float="left" 
-        padding="0 0.75rem" 
+        <List
+        mx='auto'
+        float="left"
         minH="1px"
         spacing="1"
         fontWeight="lighter" >
-          <ListItem fontSize="18px" fontWeight="bold">Links</ListItem>
+          <ListItem fontSize="24px" fontWeight="bold">Links</ListItem>
           <ListItem> 
             <Link href="http://www.ufc.br/" isExternal color="white">Portal UFC</Link>
           </ListItem>
@@ -95,13 +102,12 @@ export default function Footer() {
           </ListItem>
         </List>
 
-        <Box 
-        w="25%" 
-        marginLeft="auto" >
-          <Link href="http://www.ufc.br/" isExternal><Image m="14px 0px 16px 0px" maxW="90%" maxH="90px" display="inline-block" src={ufc_logo} /></Link>
-          <Link href="http://portal.dc.ufc.br/" isExternal><Image m="14px 0px 16px 0px" maxW="90%" maxH="90px" display="inline-block" src={dc_logo} /></Link>
-        </Box>
-      </Box>
+        <Stack
+        mx='auto' >
+          <Link mx='auto' w='90%' maxW='300px' href="http://www.ufc.br/" isExternal><Image src={ufc_logo} /></Link>
+          <Link mx='auto' w='85%' maxW='275px' href="http://portal.dc.ufc.br/" isExternal><Image src={dc_logo} /></Link>
+        </Stack>
+      </Grid>
     </Box>
     </ThemeProvider>
     );
