@@ -82,24 +82,24 @@ function Header({ siteTitle }) {
             </DrawerHeader>
             <DrawerBody>
               <NavLink href="/">Inicio</NavLink>
-              <NavLink href="/">Sobre</NavLink>
-              <NavLink href="/">Atividades</NavLink>
-              <NavLink href="/">Blog</NavLink>
-              <NavLink href="/">Certificados</NavLink>
-              <NavLink href="/">Emprestimos</NavLink>
-              <NavLink href="/">Contato</NavLink>
+              <NavLink href="/sobre/">Sobre</NavLink>
+              <NavLink href="/atividades/">Atividades</NavLink>
+              <NavLink href="/blog/">Blog</NavLink>
+              <NavLink href="/certificados/">Certificados</NavLink>
+              <NavLink href="/emprestimos/">Emprestimos</NavLink>
+              <NavLink href="/contato/">Contato</NavLink>
             </DrawerBody>
           </DrawerContent>
         </Drawer>
 
         <Box display={{ xs: 'none', lg: 'flex' }} mr="5%" wrap="wrap">
           <NavLink href="/">Inicio</NavLink>
-          <NavLink href="/">Sobre</NavLink>
-          <NavLink href="/">Atividades</NavLink>
-          <NavLink href="/">Blog</NavLink>
-          <NavLink href="/">Certificados</NavLink>
-          <NavLink href="/">Emprestimos</NavLink>
-          <NavLink href="/">Contato</NavLink>
+          <NavLink href="/sobre/">Sobre</NavLink>
+          <NavLink href="/atividades/">Atividades</NavLink>
+          <NavLink href="/blog/">Blog</NavLink>
+          <NavLink href="/certificados/">Certificados</NavLink>
+          <NavLink href="/emprestimos/">Emprestimos</NavLink>
+          <NavLink href="/contato/">Contato</NavLink>
         </Box>
       </Flex>
     </header>
