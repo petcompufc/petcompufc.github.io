@@ -24,16 +24,6 @@ import dc_logo from '../images/logo_dc.png';
 import ufc_logo from '../images/logo_ufc.png';
 
 export default function Footer() {
-  if(typeof window != 'undefined') {
-    const [width, setWidth] = React.useState(window.innerWidth);
-  }
-
-  React.useEffect(() => {
-    window.addEventListener('resize', ()=>{
-      setWidth(window.innerWidth)
-    })
-  })
-
   return (
     <ThemeProvider>
     <Box 
@@ -50,7 +40,7 @@ export default function Footer() {
         mx="auto"
         fontSize="16px"
         fontFamily="Open Sans"
-        templateColumns={width>900? 'repeat(4, 1fr)': width>600? 'repeat(2, 1fr)': 'repeat(1, 1fr)'}
+        templateColumns={['repeat(1, 1fr)','repeat(2, 1fr)', 'repeat(4, 1fr)']}
         >
         
         <Box 
