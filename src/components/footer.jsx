@@ -25,10 +25,10 @@ import ufc_logo from '../images/logo_ufc.png';
 
 export default function Footer() {
 
-  const [width, setWidth] = React.useState(innerWidth);
+  const [width, setWidth] = React.useState(window.innerWidth);
   React.useEffect(() => {
     window.addEventListener('resize', ()=>{
-      setWidth(innerWidth)
+      setWidth(window.innerWidth)
     })
   })
 
@@ -48,7 +48,7 @@ export default function Footer() {
         mx="auto"
         fontSize="16px"
         fontFamily="Open Sans"
-        templateColumns={width>900? 'repeat(4, 1fr)': width>600? 'repeat(2, 1fr)': 'repeate(1, 1fr)'}
+        templateColumns={width>900? 'repeat(4, 1fr)': width>600? 'repeat(2, 1fr)': 'repeat(1, 1fr)'}
         >
         
         <Box 
