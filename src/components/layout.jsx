@@ -11,6 +11,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { ThemeProvider, CSSReset } from '@chakra-ui/core';
 
 import Header from './header';
+import Footer from './footer';
 import './layout.css';
 
 const Layout = ({ children }) => {
@@ -36,15 +37,10 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
-        <footer>
-          ©
-          {' '}
-          {new Date().getFullYear()}
-          , Built with
-          {' '}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
       </div>
+      <footer>
+        <Footer />
+      </footer>
     </ThemeProvider>
   );
 };
