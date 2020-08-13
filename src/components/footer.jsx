@@ -24,7 +24,9 @@ import dc_logo from '../images/logo_dc.png';
 import ufc_logo from '../images/logo_ufc.png';
 
 export default function Footer() {
-  if(typeof window != 'undefined') const [width, setWidth] = React.useState(window.innerWidth);
+  if(typeof window != 'undefined') {
+    const [width, setWidth] = React.useState(window.innerWidth);
+  }
 
   React.useEffect(() => {
     window.addEventListener('resize', ()=>{
