@@ -1,47 +1,116 @@
-import { Link } from 'gatsby';
+import { Link as GatsbyLink } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { useDisclosure, Button, ThemeProvider, CSSReset } from "@chakra-ui/core"
-import Modal from './modal_certificates'
+import {
+  Link,
+  Flex,
+  Text,
+  Image,
+  Box,
+  useDisclosure,
+  Drawer,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerBody,
+  DrawerHeader,
+} from '@chakra-ui/core';
 
-const Header = ({ siteTitle }) => {
+import Modal from '../components/modal'
+import logo from '../images/logo-pet-red.png';
 
-  const { isOpen, onOpen, onClose } = useDisclosure()
+const red = 'red.500';
 
-  return(
-    <header
-      style={{
-        background: 'rebeccapurple',
-        marginBottom: '1.45rem',
-      }}
+const NavLink = ({ children, href, onClick }) => (
+  <Link
+    as={GatsbyLink}
+    to={href}
+    onClick={onClick}
+    display="grid"
+    alignItems="center"
+    p={2}
+    transition="0.3s all"
+    _hover={{ bg: '#EDF2F7' }}
+    _focus={{ boxShadow: 'none' }}
+  >
+    <Text
+      fontFamily="Open Sans"
+      fontWeight="semibold"
+      color={red}
     >
-      <div
-        style={{
-          margin: '0 auto',
-          maxWidth: 960,
-          padding: '1.45rem 1.0875rem',
-        }}
-      >
-        <h1 style={{ margin: 0 }}>
-          <Link
-            to="/"
-            style={{
-              color: 'white',
-              textDecoration: 'none',
-            }}
+      { children }
+    </Text>
+  </Link>
+);
+
+function Header({ siteTitle }) {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [ isOpenModal, setIsOpenModal ] = React.useState();
+  const toggleModal = () => setIsOpenModal(!isOpenModal)
+  const btnRef = React.useRef();
+  return (
+    <header>
+      <Flex as="nav" w="100%" bg="white" boxShadow="md" justify="space-between">
+        <Link as={GatsbyLink} to="/" my={2} ml="5%" maxW="3rem">
+          <Image
+            src={logo}
+            alt="Logo PET"
+            backgroundSize="contain"
+            m="0"
+          />
+        </Link>
+
+        <Box ref={btnRef} display={{ xs: 'flex', lg: 'none' }} mr="5%" onClick={onOpen}>
+          <svg
+            fill="black"
+            width="20px"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            {siteTitle}
-          </Link>
-        </h1>
-        <ThemeProvider>
-          <CSSReset />
-          <Button height='32px' onClick={onOpen}>Open Modal</Button>
-        </ThemeProvider>
-        <Modal isOpen={isOpen} onOpen={onOpen} onClose={onClose}></Modal>
-      </div>
+            <title>Menu</title>
+            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+          </svg>
+        </Box>
+        <Drawer
+          isOpen={isOpen}
+          placement="right"
+          onClose={onClose}
+          finalFocusRef={btnRef}
+        >
+          <DrawerOverlay />
+          <DrawerContent>
+            <DrawerHeader
+              fontFamily="Open Sans"
+              borderBottomWidth="2px"
+            >
+              PET Computação
+            </DrawerHeader>
+            <DrawerBody>
+              <NavLink href="/">Inicio</NavLink>
+              <NavLink href="/">Sobre</NavLink>
+              <NavLink href="/">Atividades</NavLink>
+              <NavLink href="/">Blog</NavLink>
+              <NavLink href='#' onClick={toggleModal}>Certificados</NavLink>
+              <Modal isOpen={isOpenModal} onOpen={toggleModal} onClose={toggleModal} />
+              <NavLink href="/">Emprestimos</NavLink>
+              <NavLink href="/">Contato</NavLink>
+            </DrawerBody>
+          </DrawerContent>
+        </Drawer>
+
+        <Box display={{ xs: 'none', lg: 'flex' }} mr="5%" wrap="wrap">
+          <NavLink href="/">Inicio</NavLink>
+          <NavLink href="/">Sobre</NavLink>
+          <NavLink href="/">Atividades</NavLink>
+          <NavLink href="/">Blog</NavLink>
+          <NavLink href='#' onClick={toggleModal}>Certificados</NavLink>
+          <Modal isOpen={isOpenModal} onOpen={toggleModal} onClose={toggleModal} />
+          <NavLink href="/">Emprestimos</NavLink>
+          <NavLink href="/">Contato</NavLink>
+        </Box>
+      </Flex>
     </header>
-  )
-};
+  );
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
