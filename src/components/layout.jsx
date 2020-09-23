@@ -8,8 +8,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
+import { ThemeProvider, CSSReset } from '@chakra-ui/core';
 
 import Header from './header';
+import Footer from './footer';
 import './layout.css';
 
 const Layout = ({ children }) => {
@@ -24,7 +26,8 @@ const Layout = ({ children }) => {
   `);
 
   return (
-    <>
+    <ThemeProvider>
+      <CSSReset />
       <Header siteTitle={data.site.siteMetadata.title} />
       <div
         style={{
@@ -34,16 +37,11 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
-        <footer>
-          ©
-          {' '}
-          {new Date().getFullYear()}
-          , Built with
-          {' '}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
       </div>
-    </>
+      <footer>
+        <Footer />
+      </footer>
+    </ThemeProvider>
   );
 };
 
