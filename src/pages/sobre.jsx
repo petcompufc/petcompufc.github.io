@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  Heading, Text, List, ListItem, Link, Icon, Flex,
+  Heading, Text, List, ListItem, Link, Icon, Grid,
 } from '@chakra-ui/core';
 
 import Layout from '../components/layout';
@@ -61,7 +61,7 @@ const SobreNos = () => (
 
     <Heading as="h2" my={3} size="lg">PETianos</Heading>
 
-    <Flex w="100%" direction="row" wrap="wrap" align="center" justify="space-evenly">
+    <Grid w="100%" templateColumns="repeat(auto-fit, minmax(10rem, 1fr))">
       <Petiano
         nome="Lincoln Rocha"
         titulo="Tutor"
@@ -69,80 +69,54 @@ const SobreNos = () => (
       />
       <Petiano
         nome="Felipe Keiler"
-        titulo="Bolsista"
-        imagem=""
-      />
-      <Petiano
-        nome="Diego Holanda"
-        titulo="Bolsista"
-        imagem=""
-      />
-      <Petiano
-        nome="Davi Segundo"
-        titulo="Bolsista"
-        imagem=""
+        titulo="PETiano"
       />
       <Petiano
         nome="Gabriel Passos"
-        titulo="Bolsista"
+        titulo="PETiano"
         imagem=""
       />
       <Petiano
         nome="Gabriel Brilhante"
-        titulo="Bolsista"
-        imagem=""
-      />
-      <Petiano
-        nome="Gabriel Candeia"
-        titulo="Voluntário"
-        imagem=""
+        titulo="PETiano"
       />
       <Petiano
         nome="Laura Petrola"
-        titulo="Bolsista"
-        imagem=""
+        titulo="PETiana"
       />
       <Petiano
         nome="Amanda Cavalcante"
-        titulo="Bolsista"
-        imagem=""
+        titulo="PETiana"
       />
       <Petiano
         nome="João Victor"
-        titulo="Bolsista"
-        imagem=""
+        titulo="PETiano"
       />
       <Petiano
         nome="Rodrigo Nogueira"
-        titulo="Bolsista"
-        imagem=""
+        titulo="PETiano"
       />
       <Petiano
         nome="Paloma Almeida"
-        titulo="Voluntária"
-        imagem=""
+        titulo="PETiana"
       />
       <Petiano
         nome="Michael Nicholas"
-        titulo="Bolsista"
-        imagem=""
+        titulo="PETiano"
       />
       <Petiano
         nome="Sabrina Sioli"
-        titulo="Voluntária"
-        imagem=""
+        titulo="PETiana"
       />
       <Petiano
         nome="Mayron Alves"
-        titulo="Voluntário"
-        imagem=""
+        titulo="PETiano"
       />
       <Petiano
         nome="Josué Hinrichs"
-        titulo="Voluntário"
-        imagem=""
+        titulo="PETiano"
       />
-    </Flex>
+    </Grid>
   </Layout>
 );
 
