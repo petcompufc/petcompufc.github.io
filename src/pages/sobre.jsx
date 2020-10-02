@@ -4,6 +4,7 @@ import {
 } from '@chakra-ui/core';
 
 import Layout from '../components/layout';
+import Timeline from '../components/timeline';
 import Petiano from '../components/sobre/petiano';
 
 const SobreNos = () => (
@@ -58,6 +59,8 @@ const SobreNos = () => (
     </List>
 
     <Heading as="h2" my={3} size="lg">Timeline</Heading>
+
+    <Timeline />
 
     <Heading as="h2" my={3} size="lg">PETianos</Heading>
 
