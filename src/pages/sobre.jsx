@@ -4,7 +4,7 @@ import {
 } from '@chakra-ui/core';
 
 import Layout from '../components/layout';
-import Timeline from '../components/timeline';
+import Timeline from '../components/sobre/timeline';
 import Petiano from '../components/sobre/petiano';
 
 const SobreNos = () => (
@@ -60,7 +60,45 @@ const SobreNos = () => (
 
     <Heading as="h2" my={3} size="lg">Timeline</Heading>
 
-    <Timeline />
+    <Timeline eventos={[
+      {
+        ano: 1992,
+        acontecimento: 'O PET Computação UFC é fundado pelo Prof. Riverson, sendo ele o primeiro a ocupar o cargo de tutor',
+      },
+      {
+        ano: 1996,
+        acontecimento: 'O PETComp realiza a sua primeira troca de tutor, assumindo o Prof. Tarcísio',
+      },
+      {
+        ano: 1997,
+        acontecimento: 'O PETComp troca de tutor novamente, sendo o novo tutor o Prof. Marcelino Pequeno',
+      },
+      {
+        ano: 1999,
+        acontecimento: 'A CAPES anuncia o fim do programa, que passar a existir sob emendas parlamentares, com uma quantidade menor de bolsistas e sem bolsa nem custeio',
+      },
+      {
+        ano: 2003,
+        acontecimento: 'O Programa é transferido da CAPES para a SESU, voltando a ter 12 bolsistas com custeio e pagamento de tutor',
+      },
+      {
+        ano: 2005,
+        acontecimento: 'O PET torna-se regulamentado por lei, dando mais segurança ao programa.',
+      },
+      {
+        ano: 2005,
+        acontecimento: 'O PET Computação organiza a SESOL, uma referência nacional de encontro para desenvolvimento e utilização de softwares livres.',
+      },
+      {
+        ano: 2010,
+        acontecimento: 'A duração do tutor no cargo é limitada a 6 anos',
+      },
+      {
+        ano: 2016,
+        acontecimento: 'O PETComp, pela primeira vez através do debate e da votação de alunos e professores, troca de tutor, assumindo o prof. Lincoln Rocha',
+      },
+    ]}
+    />
 
     <Heading as="h2" my={3} size="lg">PETianos</Heading>
 
