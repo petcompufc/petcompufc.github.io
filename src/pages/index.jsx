@@ -12,14 +12,17 @@ const IndexPage = () => (
       images={[{
         src: img1,
         desc: 'Imagem 1',
+        text: 'Saiba mais sobre o PET',
       },
       {
         src: img2,
         desc: 'Imagem 2',
+        text: 'Veja quem faz parte do PET',
       },
       {
         src: img3,
         desc: 'Imagem 3',
+        text: 'Conheça nossas atividades',
       }]}
     />
   </Layout>

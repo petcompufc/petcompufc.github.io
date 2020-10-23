@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Box, IconButton, Image, Text } from '@chakra-ui/core';
+import {
+  Box,
+  IconButton,
+  Heading,
+} from '@chakra-ui/core';
 
 function Carousel({ images }) {
   const [isLocked, setLocked] = useState(false);
@@ -23,28 +27,53 @@ function Carousel({ images }) {
       aria-roledescription="carousel"
       pos="relative"
       role="group"
+      overflow="hidden"
+      mt={3}
+      w="100%"
+      h="md"
+      mx="auto"
+      borderRadius={16}
     >
       {images.map((image, index) => (
-        <Image
+        <Box
           aria-roledescription="slide"
           aria-label={image.desc}
-          display={slide === index ? '' : 'none'}
-          src={image.src}
-        />
+          aria-hidden={slide === index ? 'false' : 'true'}
+          h="100%"
+          l="0"
+          overflow="hidden"
+          pos="absolute"
+          transform={`translateX(${(index - slide) * 100}%)`}
+          transition="all 0.5s 250ms ease-out"
+          top="0"
+          w="100%"
+        >
+          <Box
+            t="0"
+            l="0"
+            w="100%"
+            h="100%"
+            bgImage={`url(${image.src})`}
+            bgSize="cover"
+            bgPos="center center"
+            pos="absolute"
+          />
+          <Heading
+            as="h3"
+            bg="rgba(0, 0, 0, 0.4)"
+            l="0"
+            t="0"
+            p={2}
+            color="white"
+            fontSize="4xl"
+            pos="absolute"
+            w="100%"
+          >
+            {image.text}
+          </Heading>
+        </Box>
       ))}
-      <Text 
-      fontSize="50px" 
-      color = "white"
-      pos="absolute"
-      left={2}
-      top="0"
-      bottom="0"
-      my="auto"
-      >
-        Imagem 01 BLA BLA BLA
-      </Text>
       <IconButton
-        variant="outline"
         variantColor="red"
         aria-label="Go to previous slide"
         icon="arrow-back"
@@ -55,22 +84,22 @@ function Carousel({ images }) {
         top="0"
         bottom="0"
         my="auto"
+        size="sm"
       />
       <IconButton
-        variant="outline"
         variantColor="red"
         aria-label={isLocked ? 'Start slide rotation' : 'Stop slide rotation'}
         icon={isLocked ? 'lock' : 'unlock'}
         onClick={() => setLocked(!isLocked)}
         isRound
         pos="absolute"
-        bottom={2}
         left="0"
         right="0"
         mx="auto"
+        size="sm"
+        bottom={2}
       />
       <IconButton
-        variant="outline"
         variantColor="red"
         aria-label="Go to next slide"
         icon="arrow-forward"
@@ -81,6 +110,7 @@ function Carousel({ images }) {
         top="0"
         bottom="0"
         my="auto"
+        size="sm"
       />
     </Box>
   );
