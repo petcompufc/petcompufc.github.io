@@ -40,7 +40,7 @@ const NavLink = ({ children, href }) => (
   </Link>
 );
 
-function Header({ siteTitle }) {
+function Header() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
   return (

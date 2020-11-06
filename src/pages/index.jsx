@@ -1,25 +1,30 @@
 import React from 'react';
-import { Link } from 'gatsby';
-
+import Carousel from '../components/index/carousel';
 import Layout from '../components/layout';
-import Image from '../components/image';
-import SEO from '../components/seo';
+
+import img1 from '../images/carousel1.jpg';
+import img2 from '../images/carousel2.jpg';
+import img3 from '../images/carousel3.jpg';
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: '300px', marginBottom: '1.45rem' }}>
-      <Image />
-    </div>
-    <Link to="/emprestimos/">Go to emprestimos</Link><br/>
-    <Link to="/Contato/">Go to contato</Link><br/>
-    <Link to="/page-2/">Go to page 2</Link>
-    {' '}
-    <br />
-    <Link to="/using-typescript/">Go to &ldquo;Using TypeScript&rdquo;</Link>
+    <Carousel
+      images={[{
+        src: img1,
+        desc: 'Imagem 1',
+        text: 'Saiba mais sobre o PET',
+      },
+      {
+        src: img2,
+        desc: 'Imagem 2',
+        text: 'Veja quem faz parte do PET',
+      },
+      {
+        src: img3,
+        desc: 'Imagem 3',
+        text: 'Conheça nossas atividades',
+      }]}
+    />
   </Layout>
 );
 
