@@ -8,6 +8,10 @@
     "@chakra-ui/core": "^0.8.0",
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
+    "@fortawesome/fontawesome-svg-core": "^1.2.30",
+    "@fortawesome/free-brands-svg-icons": "^5.14.0",
+    "@fortawesome/free-solid-svg-icons": "^5.14.0",
+    "@fortawesome/react-fontawesome": "^0.1.11",
     "emotion-theming": "^10.0.27",
     "framer-motion": "^2.4.2",
     "gatsby": "^2.23.12",
@@ -22,7 +26,8 @@
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "social-media-icons-react": "^1.0.10"
   },
   "devDependencies": {
     "eslint": "^7.4.0",
