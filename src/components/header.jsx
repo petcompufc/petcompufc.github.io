@@ -46,7 +46,10 @@ function Header({ siteTitle }) {
   return (
     <header>
       <Flex as="nav" w="100%" bg="white" boxShadow="md" justify="space-between">
-        <Link as={GatsbyLink} to="/" my={2} ml="5%" maxW="3rem">
+        <Link as={GatsbyLink} to="/" my={2} ml="5%" maxW="3rem" 
+            _hover={{
+              transform: 'rotate(25deg)'
+            }}>
           <Image
             src={logo}
             alt="Logo PET"
