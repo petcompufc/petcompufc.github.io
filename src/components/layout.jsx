@@ -13,6 +13,7 @@ import { ThemeProvider, CSSReset } from '@chakra-ui/core';
 import Header from './header';
 import Footer from './footer';
 import './layout.css';
+import { ThemeProvider } from '@chakra-ui/core';
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`

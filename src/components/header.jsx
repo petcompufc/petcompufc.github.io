@@ -15,14 +15,16 @@ import {
   DrawerHeader,
 } from '@chakra-ui/core';
 
+import Modal from '../components/modal'
 import logo from '../images/logo-pet-red.png';
 
 const red = 'red.500';
 
-const NavLink = ({ children, href }) => (
+const NavLink = ({ children, href, onClick }) => (
   <Link
     as={GatsbyLink}
     to={href}
+    onClick={onClick}
     display="grid"
     alignItems="center"
     p={2}
@@ -40,8 +42,11 @@ const NavLink = ({ children, href }) => (
   </Link>
 );
 
-function Header() {
+
+function Header({ siteTitle }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [ isOpenModal, setIsOpenModal ] = React.useState();
+  const toggleModal = () => setIsOpenModal(!isOpenModal)
   const btnRef = React.useRef();
   return (
     <header>
@@ -88,7 +93,8 @@ function Header() {
               <NavLink href="/sobre/">Sobre</NavLink>
               <NavLink href="/atividades/">Atividades</NavLink>
               <NavLink href="/blog/">Blog</NavLink>
-              <NavLink href="/certificados/">Certificados</NavLink>
+              <NavLink href='#' onClick={toggleModal}>Certificados</NavLink>
+              <Modal isOpen={isOpenModal} onOpen={toggleModal} onClose={toggleModal} />
               <NavLink href="/emprestimos/">Emprestimos</NavLink>
               <NavLink href="/contato/">Contato</NavLink>
             </DrawerBody>
@@ -100,7 +106,8 @@ function Header() {
           <NavLink href="/sobre/">Sobre</NavLink>
           <NavLink href="/atividades/">Atividades</NavLink>
           <NavLink href="/blog/">Blog</NavLink>
-          <NavLink href="/certificados/">Certificados</NavLink>
+          <NavLink href='#' onClick={toggleModal}>Certificados</NavLink>
+          <Modal isOpen={isOpenModal} onOpen={toggleModal} onClose={toggleModal} />
           <NavLink href="/emprestimos/">Emprestimos</NavLink>
           <NavLink href="/contato/">Contato</NavLink>
         </Box>
