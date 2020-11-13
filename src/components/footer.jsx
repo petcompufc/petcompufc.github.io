@@ -5,7 +5,6 @@ import React from 'react';
 import { 
   Box,
   Image,
-  ThemeProvider,
   List,
   ListItem,
   Link,
@@ -25,7 +24,6 @@ import ufc_logo from '../images/logo_ufc.png';
 
 export default function Footer() {
   return (
-    <ThemeProvider>
     <Box 
       bg="#37474f"
       overflow="hidden"
@@ -101,7 +99,6 @@ export default function Footer() {
         </Stack>
       </Grid>
     </Box>
-    </ThemeProvider>
     );
   }
 
