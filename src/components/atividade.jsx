@@ -2,7 +2,7 @@
 /* eslint-disable react/prop-types */
 import {
   Avatar, Box, CloseButton, Flex, Heading, PseudoBox, Text,
-} from '@chakra-ui/core';
+} from '@chakra-ui/react';
 import React from 'react';
 
 export default (props) => {
@@ -15,7 +15,7 @@ export default (props) => {
           {props.name}
         </Heading>
       </Flex>
-      <PseudoBox _hover={{ cursor: 'pointer' }}>
+      <Box _hover={{ cursor: 'pointer' }}>
         <Avatar
           name="Coding"
           src={props.img}
@@ -28,7 +28,7 @@ export default (props) => {
           onClick={() => setTop('-100%')}
           _hover={{ cursor: 'pointer' }}
         />
-      </PseudoBox>
+      </Box>
       <Box
         h="96%"
         mx="4px"

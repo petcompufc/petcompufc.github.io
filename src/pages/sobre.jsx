@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   Heading, Text, List, ListItem, Link, Icon, Grid,
-} from '@chakra-ui/core';
+} from '@chakra-ui/react';
 
 import Layout from '../components/layout';
 import Timeline from '../components/sobre/timeline';

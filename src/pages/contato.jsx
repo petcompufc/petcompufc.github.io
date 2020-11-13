@@ -18,7 +18,7 @@ import {
   FormLabel,
   InputGroup,
   InputRightElement,
-} from '@chakra-ui/core';
+} from '@chakra-ui/react';
 
 import Layout from '../components/layout';
 import Midias from '../components/midias';
@@ -79,7 +79,7 @@ export default function Contato() {
               <Flex marginTop="24px" justifyContent="center">
                 <Button
                   type="submit"
-                  variantColor="red"
+                  colorScheme="red"
                   boxShadow="2px 2px 3px #000"
                   backgroundImage="url(https://live.staticflickr.com/2329/2240956835_9463c7125b_b.jpg)"
                   _focus={{ outline: 'none' }}

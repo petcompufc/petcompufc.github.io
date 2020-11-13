@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link as GatsbyLink } from 'gatsby';
 import PropTypes from 'prop-types';
-import { typography } from 'styled-system'
 
 import Layout from '../components/layout';
 import Manual from '../ManualdeEmprestimo.pdf';
@@ -17,7 +16,7 @@ import {
     BreadcrumbLink,
     Heading,
     Divider,
-} from '@chakra-ui/core'
+} from '@chakra-ui/react'
 
 
 export default function Emprestimo() {
@@ -80,7 +79,7 @@ export default function Emprestimo() {
                         <Button
                             _hover={{bg: "#a40000"}}
                             _active={{bg: "#8b0000" }}
-                            variantColor="red"
+                            colorScheme="red"
                         >
                             <Link color="white" href={Manual} isExternal> Manual de Empréstimos </Link> </Button>
                     </Text>

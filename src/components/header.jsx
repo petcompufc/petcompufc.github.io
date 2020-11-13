@@ -13,7 +13,7 @@ import {
   DrawerContent,
   DrawerBody,
   DrawerHeader,
-} from '@chakra-ui/core';
+} from '@chakra-ui/react';
 
 import Modal from '../components/modal'
 import logo from '../images/logo-pet-red.png';
@@ -75,7 +75,7 @@ function Header({ siteTitle }) {
           </svg>
         </Box>
         <Drawer
-          isOpen={isOpen}
+          in={isOpen}
           placement="right"
           onClose={onClose}
           finalFocusRef={btnRef}
@@ -94,7 +94,7 @@ function Header({ siteTitle }) {
               <NavLink href="/atividades/">Atividades</NavLink>
               <NavLink href="/blog/">Blog</NavLink>
               <NavLink href='#' onClick={toggleModal}>Certificados</NavLink>
-              <Modal isOpen={isOpenModal} onOpen={toggleModal} onClose={toggleModal} />
+              <Modal in={isOpenModal} onOpen={toggleModal} onClose={toggleModal} />
               <NavLink href="/emprestimos/">Emprestimos</NavLink>
               <NavLink href="/contato/">Contato</NavLink>
             </DrawerBody>
@@ -107,7 +107,7 @@ function Header({ siteTitle }) {
           <NavLink href="/atividades/">Atividades</NavLink>
           <NavLink href="/blog/">Blog</NavLink>
           <NavLink href='#' onClick={toggleModal}>Certificados</NavLink>
-          <Modal isOpen={isOpenModal} onOpen={toggleModal} onClose={toggleModal} />
+          <Modal in={isOpenModal} onOpen={toggleModal} onClose={toggleModal} />
           <NavLink href="/emprestimos/">Emprestimos</NavLink>
           <NavLink href="/contato/">Contato</NavLink>
         </Box>

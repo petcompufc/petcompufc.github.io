@@ -6,9 +6,9 @@ import {
   List,
   ListItem,
   Text,
-} from '@chakra-ui/core';
+} from '@chakra-ui/react';
 /** @jsx jsx */
-import { jsx } from '@emotion/core';
+import { jsx } from '@emotion/react';
 
 const Evento = ({ children }) => (
   <ListItem

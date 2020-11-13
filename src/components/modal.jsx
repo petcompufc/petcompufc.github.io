@@ -3,7 +3,7 @@
 import React from 'react';
 import {
   Input, Modal, ModalOverlay, ModalContent, ModalBody, ModalHeader, Heading, FormControl, FormLabel, Flex, Box
-} from '@chakra-ui/core';
+} from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 
 import icon from '../images/send-icon.png';
@@ -11,7 +11,7 @@ import icon from '../images/send-icon.png';
 const MotionModalContent = motion.custom(ModalContent);
 
 const Certificados = (props) => (
-  <Modal isOpen={props.isOpen} onClose={props.onClose}>
+  <Modal in={props.isOpen} onClose={props.onClose}>
     <ModalOverlay />
     <MotionModalContent width={['250px', '450px', '700px']} maxWidth="100%" initial={{ top: '-40%' }} animate={{ top: '0%' }} transition={{ duration: 0.45 }}>
       <ModalHeader alignSelf="center" fontSize={['18px', '32px']}>
