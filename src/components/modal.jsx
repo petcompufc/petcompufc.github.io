@@ -2,7 +2,17 @@
 /* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import {
-  Input, Modal, ModalOverlay, ModalContent, ModalBody, ModalHeader, Heading, FormControl, FormLabel, Flex, Box
+  Input,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalBody,
+  ModalHeader,
+  Heading,
+  FormControl,
+  FormLabel,
+  Flex,
+  Box,
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 

@@ -1,7 +1,7 @@
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prop-types */
 import {
-  Avatar, Box, CloseButton, Flex, Heading, PseudoBox, Text,
+  Avatar, Box, CloseButton, Flex, Heading,
 } from '@chakra-ui/react';
 import React from 'react';
 

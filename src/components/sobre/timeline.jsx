@@ -19,7 +19,7 @@ const Evento = ({ children }) => (
     maxW="100%"
     transition="all .4s"
     _even={{ backgroundColor: 'red.100' }}
-    _hover={{ 
+    _hover={{
       boxShadow: 'md',
       transform: 'translateY(-5%)',
     }}

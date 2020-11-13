@@ -15,7 +15,7 @@ import {
   DrawerHeader,
 } from '@chakra-ui/react';
 
-import Modal from '../components/modal'
+import Modal from './modal';
 import logo from '../images/logo-pet-red.png';
 
 const red = 'red.500';
@@ -42,19 +42,30 @@ const NavLink = ({ children, href, onClick }) => (
   </Link>
 );
 
+NavLink.propTypes = {
+  children: PropTypes.element.isRequired,
+  href: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+};
 
-function Header({ siteTitle }) {
+function Header() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [ isOpenModal, setIsOpenModal ] = React.useState();
-  const toggleModal = () => setIsOpenModal(!isOpenModal)
+  const [isOpenModal, setIsOpenModal] = React.useState();
+  const toggleModal = () => setIsOpenModal(!isOpenModal);
   const btnRef = React.useRef();
   return (
     <header>
       <Flex as="nav" w="100%" bg="white" boxShadow="md" justify="space-between">
-        <Link as={GatsbyLink} to="/" my={2} ml="5%" maxW="3rem" 
-            _hover={{
-              transform: 'rotate(25deg)'
-            }}>
+        <Link
+          as={GatsbyLink}
+          to="/"
+          my={2}
+          ml="5%"
+          maxW="3rem"
+          _hover={{
+            transform: 'rotate(25deg)',
+          }}
+        >
           <Image
             src={logo}
             alt="Logo PET"
@@ -93,7 +104,7 @@ function Header({ siteTitle }) {
               <NavLink href="/sobre/">Sobre</NavLink>
               <NavLink href="/atividades/">Atividades</NavLink>
               <NavLink href="/blog/">Blog</NavLink>
-              <NavLink href='#' onClick={toggleModal}>Certificados</NavLink>
+              <NavLink href="#" onClick={toggleModal}>Certificados</NavLink>
               <Modal in={isOpenModal} onOpen={toggleModal} onClose={toggleModal} />
               <NavLink href="/emprestimos/">Emprestimos</NavLink>
               <NavLink href="/contato/">Contato</NavLink>
@@ -106,7 +117,7 @@ function Header({ siteTitle }) {
           <NavLink href="/sobre/">Sobre</NavLink>
           <NavLink href="/atividades/">Atividades</NavLink>
           <NavLink href="/blog/">Blog</NavLink>
-          <NavLink href='#' onClick={toggleModal}>Certificados</NavLink>
+          <NavLink href="#" onClick={toggleModal}>Certificados</NavLink>
           <Modal in={isOpenModal} onOpen={toggleModal} onClose={toggleModal} />
           <NavLink href="/emprestimos/">Emprestimos</NavLink>
           <NavLink href="/contato/">Contato</NavLink>
@@ -115,13 +126,5 @@ function Header({ siteTitle }) {
     </header>
   );
 }
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-};
-
-Header.defaultProps = {
-  siteTitle: '',
-};
 
 export default Header;

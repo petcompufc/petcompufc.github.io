@@ -29,7 +29,7 @@ export default () => {
   // lores das atividades
   const coding = (
     <Box>
-      <Text mt="12px" fontSize="14px">O projeto "Coding: Informática nas Escolas" surgiu com a missão de trazer um ensino de qualidade sobre Programação de Computadores para os jovens de Fortaleza.</Text>
+      <Text mt="12px" fontSize="14px">O projeto &ldquo;Coding: Informática nas Escolas&rdquo; surgiu com a missão de trazer um ensino de qualidade sobre Programação de Computadores para os jovens de Fortaleza.</Text>
       <Text mt="12px" fontSize="14px">Anualmente, são selecionados alunos ingressantes das Escolas Estaduais de Educação Prossional de Fortaleza para se juntar às novas turmas.</Text>
       <Text mt="12px" fontSize="14px">Desde o primeiro dia, os alunos assistem a aulas lúdicas, com muitas práticas, e aprendem a programar usando as tecnologias mais relevantes, como verdadeiros profissionais da área.</Text>
     </Box>
