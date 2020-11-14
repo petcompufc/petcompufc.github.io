@@ -2,6 +2,7 @@ import {
   Box, Breadcrumb, BreadcrumbItem, BreadcrumbLink, Divider, Grid, Heading, Icon, Text,
 } from '@chakra-ui/react';
 import React from 'react';
+import PropTypes from 'prop-types';
 import { TiChevronRightOutline } from 'react-icons/ti';
 
 import Layout from '../components/layout';
@@ -12,7 +13,6 @@ const Coding = require('../images/coding.png');
 const Gado = require('../images/gado.png');
 
 export default () => {
-  // eslint-disable-next-line react/prop-types
   const BreadCrumb = ({ children }) => (
     <Box paddingX="2%" bg="#25BDF5" borderRadius="16px">
       <Heading as="h2" color="#263238" marginTop="6%">{children}</Heading>
@@ -27,6 +27,10 @@ export default () => {
       </Breadcrumb>
     </Box>
   );
+
+  BreadCrumb.propTypes = {
+    children: PropTypes.node.isRequired,
+  };
 
   // lores das atividades
   const coding = (
