@@ -6,6 +6,7 @@ import {
   Modal,
   ModalOverlay,
   ModalContent,
+  ModalCloseButton,
   ModalBody,
   ModalHeader,
   Heading,
@@ -21,11 +22,12 @@ import icon from '../images/send-icon.png';
 const MotionModalContent = motion.custom(ModalContent);
 
 const Certificados = (props) => (
-  <Modal in={props.isOpen} onClose={props.onClose}>
+  <Modal isOpen={props.isOpen} onClose={props.onClose}>
     <ModalOverlay />
     <MotionModalContent width={['250px', '450px', '700px']} maxWidth="100%" initial={{ top: '-40%' }} animate={{ top: '0%' }} transition={{ duration: 0.45 }}>
       <ModalHeader alignSelf="center" fontSize={['18px', '32px']}>
         <Heading as="h4" fontSize={['24px', '32px']}>PET Certificados</Heading>
+        <ModalCloseButton />
       </ModalHeader>
 
       <ModalBody marginTop="40px" alignSelf="center">

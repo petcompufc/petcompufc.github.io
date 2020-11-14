@@ -60,7 +60,7 @@ function Header() {
           as={GatsbyLink}
           to="/"
           my={2}
-          ml="5%"
+          ml={10}
           maxW="3rem"
           _hover={{
             transform: 'rotate(25deg)',
@@ -74,7 +74,7 @@ function Header() {
           />
         </Link>
 
-        <Box ref={btnRef} display={{ xs: 'flex', lg: 'none' }} mr="5%" onClick={onOpen}>
+        <Box ref={btnRef} display={{ base: 'flex', lg: 'none' }} mr={3} onClick={onOpen}>
           <svg
             fill="black"
             width="20px"
@@ -86,7 +86,7 @@ function Header() {
           </svg>
         </Box>
         <Drawer
-          in={isOpen}
+          isOpen={isOpen}
           placement="right"
           onClose={onClose}
           finalFocusRef={btnRef}
@@ -112,13 +112,13 @@ function Header() {
           </DrawerContent>
         </Drawer>
 
-        <Box display={{ xs: 'none', lg: 'flex' }} mr="5%" wrap="wrap">
+        <Box display={{ base: 'none', lg: 'flex' }} mr={10} wrap="wrap">
           <NavLink href="/">Inicio</NavLink>
           <NavLink href="/sobre/">Sobre</NavLink>
           <NavLink href="/atividades/">Atividades</NavLink>
           <NavLink href="/blog/">Blog</NavLink>
           <NavLink href="#" onClick={toggleModal}>Certificados</NavLink>
-          <Modal in={isOpenModal} onOpen={toggleModal} onClose={toggleModal} />
+          <Modal isOpen={isOpenModal} onOpen={toggleModal} onClose={toggleModal} />
           <NavLink href="/emprestimos/">Emprestimos</NavLink>
           <NavLink href="/contato/">Contato</NavLink>
         </Box>

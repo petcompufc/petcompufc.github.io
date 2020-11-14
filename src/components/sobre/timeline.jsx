@@ -12,7 +12,7 @@ const Evento = ({ children }) => (
   <ListItem
     borderRadius={5}
     bg="white"
-    boxShadow="sm"
+    boxShadow="md"
     p={3}
     pos="relative"
     marginLeft={4}
@@ -20,8 +20,11 @@ const Evento = ({ children }) => (
     transition="all .4s"
     _even={{ backgroundColor: 'red.100' }}
     _hover={{
-      boxShadow: 'md',
-      transform: 'translateY(-5%)',
+      boxShadow: 'lg',
+      transform: 'translateY(-10px)',
+      '&:after': {
+        transform: 'translateY(10px)',
+      },
     }}
     _after={{
       borderRadius: '100%',
@@ -32,6 +35,7 @@ const Evento = ({ children }) => (
       width: 4,
       height: 4,
       backgroundColor: 'red.500',
+      transition: 'transform .4s',
     }}
   >
     {children}
