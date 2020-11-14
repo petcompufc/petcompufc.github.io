@@ -2,6 +2,7 @@ import React from 'react';
 import {
   Heading, Text, List, ListItem, Link, Icon, Grid,
 } from '@chakra-ui/react';
+import { GoLinkExternal } from 'react-icons/go'
 
 import Layout from '../components/layout';
 import Timeline from '../components/sobre/timeline';
@@ -17,15 +18,17 @@ const SobreNos = () => (
       Universidade Federal do Ceará. O PET é um projeto da
       {' '}
       <Link color="red.500" href="http://portal.mec.gov.br/sesu-secretaria-de-educacao-superior/apresentacao" isExternal>
-        Secretaria de Educação Superior (SESu)
-        <Icon name="external-link" mx="2px" />
+        Secretaria de Educação Superior (SESu) 
+        {' '}
+        <GoLinkExternal style={{ display: 'inline' }} />
       </Link>
       {' '}
       do
       {' '}
       <Link color="red.500" href="https://www.gov.br/mec/pt-br" isExternal>
         Ministério da Educação (MEC)
-        <Icon name="external-link" mx="2px" />
+        {' '}
+        <GoLinkExternal style={{ display: 'inline' }} />
       </Link>
       {' '}
       que visa trabalhar com os PETianos (os alunos que compõem  o PET) nos 3 pilares do ensino
@@ -40,7 +43,8 @@ const SobreNos = () => (
       <ListItem>
         <Link color="red.500" href="https://oci.org.br/" isExternal>
           Olimpíada Cearense de Informática
-          <Icon name="external-link" mx="2px" />
+          {' '}
+          <GoLinkExternal style={{ display: 'inline' }} />
         </Link>
         , focada em fomentar o interesse de alunos de ensino fundamental e médio na Computação
       </ListItem>
@@ -53,7 +57,8 @@ const SobreNos = () => (
         {' '}
         <Link color="red.500" href="https://cc.ufc.br/" isExternal>
           Ciência da Computação
-          <Icon name="external-link" mx="2px" />
+          {' '}
+          <GoLinkExternal style={{ display: 'inline' }} />
         </Link>
       </ListItem>
     </List>

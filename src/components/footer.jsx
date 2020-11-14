@@ -10,11 +10,7 @@ import {
   Grid,
 } from '@chakra-ui/react';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMailBulk } from '@fortawesome/free-solid-svg-icons';
-import {
-  faFacebookF, faGithub, faInstagram, faYoutube,
-} from '@fortawesome/free-brands-svg-icons';
+import { RiFacebookCircleLine, RiGithubLine, RiInstagramLine, RiMailSendLine, RiYoutubeLine } from "react-icons/ri";
 
 import PETLogo from '../images/logo_pet-white.png';
 import DCLogo from '../images/logo_dc.png';
@@ -59,22 +55,19 @@ export default function Footer() {
           spacing="1"
           fontWeight="lighter"
         >
-          <ListItem fontSize="24px" fontWeight="bold">PET COMPUTAÇÃO</ListItem>
-          <ListItem>Av. Humberto Monte, s/n</ListItem>
-          <ListItem marginTop="-10px">UFC - Campus do Pici</ListItem>
-          <ListItem marginTop="-10px">Departamento da Computação</ListItem>
-          <ListItem marginTop="-10px">Bloco 910</ListItem>
-          <ListItem marginTop="-10px">petcomp@ufc.br</ListItem>
-          <ListItem marginTop="10px" fontSize="25px">
-            <Link href="https://github.com/petcompufc" marginRight="5px" isExternal color="white" textDecoration="initial">
-              {' '}
-              <FontAwesomeIcon icon={faGithub} />
-            </Link>
-            <Link href="https://www.facebook.com/PETCompUFC/" marginRight="5px" marginLeft="5px" isExternal color="white"><FontAwesomeIcon icon={faFacebookF} /></Link>
-            <Link href="https://www.instagram.com/petcompufc" marginRight="5px" marginLeft="5px" isExternal color="white"><FontAwesomeIcon icon={faInstagram} /></Link>
-            <Link href="https://www.youtube.com/user/petcompufc/videos" marginRight="5px" marginLeft="5px" isExternal color="white"><FontAwesomeIcon icon={faYoutube} /></Link>
-            <Link href="mailto:petcomp@ufc.br" marginLeft="5px" isExternal color="white"><FontAwesomeIcon icon={faMailBulk} /></Link>
-          </ListItem>
+          <ListItem fontSize="xl" fontWeight="bold">PET COMPUTAÇÃO</ListItem>
+          <ListItem my={0}>Av. Humberto Monte, s/n</ListItem>
+          <ListItem my={0}>UFC - Campus do Pici</ListItem>
+          <ListItem my={0}>Departamento da Computação</ListItem>
+          <ListItem my={0}>Bloco 910</ListItem>
+          <ListItem my={0}>petcomp@ufc.br</ListItem>
+          <Grid templateColumns="repeat(3, 1fr)" rowGap={3} columnGap={2} fontSize="xl">
+            <Link href="https://github.com/petcompufc" mx="auto" isExternal color="white" textDecoration="initial"><RiGithubLine /></Link>
+            <Link href="https://www.facebook.com/PETCompUFC/" mx="auto" isExternal color="white"><RiFacebookCircleLine /></Link>
+            <Link href="https://www.instagram.com/petcompufc" mx="auto" isExternal color="white"><RiInstagramLine /></Link>
+            <Link href="https://www.youtube.com/user/petcompufc/videos" mx="auto" isExternal color="white"><RiYoutubeLine /></Link>
+            <Link href="mailto:petcomp@ufc.br" mx="auto" isExternal color="white"><RiMailSendLine /></Link>
+          </Grid>
         </List>
 
         <List

@@ -2,6 +2,8 @@ import {
   Box, Breadcrumb, BreadcrumbItem, BreadcrumbLink, Divider, Grid, Heading, Icon, Text,
 } from '@chakra-ui/react';
 import React from 'react';
+import { TiChevronRightOutline } from 'react-icons/ti';
+
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import Atividade from '../components/atividade';
@@ -15,7 +17,7 @@ export default () => {
     <Box paddingX="2%" bg="#25BDF5" borderRadius="16px">
       <Heading as="h2" color="#263238" marginTop="6%">{children}</Heading>
       <Divider />
-      <Breadcrumb spacing="8px" separator={<Icon color="#D3D3D3" size="20px" verticalAlign="-5px" name="chevron-right" />} fontSize="16px" fontWeight="bold">
+      <Breadcrumb spacing="8px" separator={<TiChevronRightOutline />} fontSize="16px" fontWeight="bold">
         <BreadcrumbItem>
           <BreadcrumbLink color="#d50000" href="/">Página Inicial</BreadcrumbLink>
         </BreadcrumbItem>

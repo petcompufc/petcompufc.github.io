@@ -1,5 +1,4 @@
 import React from 'react';
-
 import {
   Button,
   Text,
@@ -11,6 +10,8 @@ import {
   Heading,
   Divider,
 } from '@chakra-ui/react';
+import { TiChevronRightOutline } from 'react-icons/ti';
+
 import Layout from '../components/layout';
 import Manual from '../ManualdeEmprestimo.pdf';
 
@@ -38,7 +39,7 @@ export default function Emprestimo() {
           spacing="8px"
           fontWeight="bold"
           fontSize="16px"
-          separator={<Icon color="#D3D3D3" name="chevron-right" size="20px" verticalAlign="-18%" />}
+          separator={<TiChevronRightOutline />}
         >
           <BreadcrumbItem>
             <BreadcrumbLink color="#d50000" href="/">Página Inicial</BreadcrumbLink>
