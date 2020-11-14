@@ -41,7 +41,7 @@ const Atividade = ({name, img, lore}) => {
         boxShadow="#aaa 0 0 2px"
       >
         <Flex justifyContent="space-between">
-          <Heading as="h3" fontSize="32px">{props.name}</Heading>
+          <Heading as="h3" fontSize="32px">{name}</Heading>
           <CloseButton my="auto" mr="4px" onClick={() => setTop('0%')} />
         </Flex>
         {lore}
