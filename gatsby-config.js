@@ -1,34 +1,35 @@
 module.exports = {
   siteMetadata: {
-    title: `PET Computação UFC`,
-    description: `Site do PET Computação UFC`,
-    author: `@petcompufc`,
+    title: 'PET Computação UFC',
+    description: 'Site do PET Computação UFC',
+    author: '@petcompufc',
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
+    'gatsby-plugin-react-helmet',
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: `images`,
+        name: 'images',
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        name: `PET Computação UFC`,
-        short_name: `petcompufc`,
-        start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#c60006`,
-        display: `minimal-ui`,
-        icon: `src/images/pet-icone.png`, // This path is relative to the root of the site.
+        name: 'PET Computação UFC',
+        short_name: 'petcompufc',
+        start_url: '/',
+        background_color: '#663399',
+        theme_color: '#c60006',
+        display: 'minimal-ui',
+        icon: 'src/images/pet-icone.png', // This path is relative to the root of the site.
       },
     },
+    '@chakra-ui/gatsby-plugin',
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};

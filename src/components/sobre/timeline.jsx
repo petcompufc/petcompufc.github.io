@@ -6,24 +6,25 @@ import {
   List,
   ListItem,
   Text,
-} from '@chakra-ui/core';
-/** @jsx jsx */
-import { jsx } from '@emotion/core';
+} from '@chakra-ui/react';
 
 const Evento = ({ children }) => (
   <ListItem
     borderRadius={5}
     bg="white"
-    boxShadow="sm"
+    boxShadow="md"
     p={3}
     pos="relative"
     marginLeft={4}
     maxW="100%"
     transition="all .4s"
     _even={{ backgroundColor: 'red.100' }}
-    _hover={{ 
-      boxShadow: 'md',
-      transform: 'translateY(-5%)',
+    _hover={{
+      boxShadow: 'lg',
+      transform: 'translateY(-10px)',
+      '&:after': {
+        transform: 'translateY(10px)',
+      },
     }}
     _after={{
       borderRadius: '100%',
@@ -34,6 +35,7 @@ const Evento = ({ children }) => (
       width: 4,
       height: 4,
       backgroundColor: 'red.500',
+      transition: 'transform .4s',
     }}
   >
     {children}

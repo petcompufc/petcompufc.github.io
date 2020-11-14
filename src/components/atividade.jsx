@@ -1,24 +1,23 @@
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable react/prop-types */
 import {
-  Avatar, Box, CloseButton, Flex, Heading, PseudoBox, Text,
-} from '@chakra-ui/core';
+  Avatar, Box, CloseButton, Flex, Heading,
+} from '@chakra-ui/react';
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export default (props) => {
+const Atividade = ({name, img, lore}) => {
   const [top, setTop] = React.useState('0%');
 
   return (
     <Box m="16px" w="280px" h="310px" overflow="hidden">
       <Flex>
         <Heading as="h3" mx="auto" fontSize="32px">
-          {props.name}
+          {name}
         </Heading>
       </Flex>
-      <PseudoBox _hover={{ cursor: 'pointer' }}>
+      <Box _hover={{ cursor: 'pointer' }}>
         <Avatar
           name="Coding"
-          src={props.img}
+          src={img}
           w="256px"
           h="256px"
           pt="24px"
@@ -28,7 +27,7 @@ export default (props) => {
           onClick={() => setTop('-100%')}
           _hover={{ cursor: 'pointer' }}
         />
-      </PseudoBox>
+      </Box>
       <Box
         h="96%"
         mx="4px"
@@ -45,8 +44,16 @@ export default (props) => {
           <Heading as="h3" fontSize="32px">{props.name}</Heading>
           <CloseButton my="auto" mr="4px" onClick={() => setTop('0%')} />
         </Flex>
-        {props.lore}
+        {lore}
       </Box>
     </Box>
   );
 };
+
+Atividade.propTypes = {
+  name: PropTypes.string.isRequired,
+  img: PropTypes.string.isRequired,
+  lore: PropTypes.string.isRequired,
+};
+
+export default Atividade;

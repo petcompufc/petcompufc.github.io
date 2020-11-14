@@ -5,7 +5,7 @@ import {
   Flex,
   Heading,
   Text,
-} from '@chakra-ui/core';
+} from '@chakra-ui/react';
 
 const Petiano = ({ imagem, nome, titulo }) => (
   <Flex direction="column" align="center" m={5}>

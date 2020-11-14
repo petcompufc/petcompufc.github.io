@@ -4,3 +4,6 @@ package-lock.json
 public
 *.css
 *.png
+*.pdf
+*.svg
+*.jpg

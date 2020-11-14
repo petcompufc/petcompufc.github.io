@@ -8,7 +8,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
-import { ThemeProvider, CSSReset } from '@chakra-ui/core';
 
 import Header from './header';
 import Footer from './footer';
@@ -26,8 +25,7 @@ const Layout = ({ children }) => {
   `);
 
   return (
-    <ThemeProvider>
-      <CSSReset />
+    <>
       <Header siteTitle={data.site.siteMetadata.title} />
       <div
         style={{
@@ -41,7 +39,7 @@ const Layout = ({ children }) => {
       <footer>
         <Footer />
       </footer>
-    </ThemeProvider>
+    </>
   );
 };
 

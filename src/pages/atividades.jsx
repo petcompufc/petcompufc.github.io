@@ -1,7 +1,10 @@
 import {
   Box, Breadcrumb, BreadcrumbItem, BreadcrumbLink, Divider, Grid, Heading, Icon, Text,
-} from '@chakra-ui/core';
+} from '@chakra-ui/react';
 import React from 'react';
+import PropTypes from 'prop-types';
+import { TiChevronRightOutline } from 'react-icons/ti';
+
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import Atividade from '../components/atividade';
@@ -10,12 +13,11 @@ const Coding = require('../images/coding.png');
 const Gado = require('../images/gado.png');
 
 export default () => {
-  // eslint-disable-next-line react/prop-types
   const BreadCrumb = ({ children }) => (
     <Box paddingX="2%" bg="#25BDF5" borderRadius="16px">
       <Heading as="h2" color="#263238" marginTop="6%">{children}</Heading>
       <Divider />
-      <Breadcrumb spacing="8px" separator={<Icon color="#D3D3D3" size="20px" verticalAlign="-5px" name="chevron-right" />} fontSize="16px" fontWeight="bold">
+      <Breadcrumb spacing="8px" separator={<TiChevronRightOutline />} fontSize="16px" fontWeight="bold">
         <BreadcrumbItem>
           <BreadcrumbLink color="#d50000" href="/">Página Inicial</BreadcrumbLink>
         </BreadcrumbItem>
@@ -26,10 +28,14 @@ export default () => {
     </Box>
   );
 
+  BreadCrumb.propTypes = {
+    children: PropTypes.node.isRequired,
+  };
+
   // lores das atividades
   const coding = (
     <Box>
-      <Text mt="12px" fontSize="14px">O projeto "Coding: Informática nas Escolas" surgiu com a missão de trazer um ensino de qualidade sobre Programação de Computadores para os jovens de Fortaleza.</Text>
+      <Text mt="12px" fontSize="14px">O projeto &ldquo;Coding: Informática nas Escolas&rdquo; surgiu com a missão de trazer um ensino de qualidade sobre Programação de Computadores para os jovens de Fortaleza.</Text>
       <Text mt="12px" fontSize="14px">Anualmente, são selecionados alunos ingressantes das Escolas Estaduais de Educação Prossional de Fortaleza para se juntar às novas turmas.</Text>
       <Text mt="12px" fontSize="14px">Desde o primeiro dia, os alunos assistem a aulas lúdicas, com muitas práticas, e aprendem a programar usando as tecnologias mais relevantes, como verdadeiros profissionais da área.</Text>
     </Box>

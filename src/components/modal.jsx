@@ -1,21 +1,32 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react/destructuring-assignment */
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
-  Input, Modal, ModalOverlay, ModalContent, ModalBody, ModalHeader, Heading, FormControl, FormLabel, Flex, Box
-} from '@chakra-ui/core';
+  Input,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalCloseButton,
+  ModalBody,
+  ModalHeader,
+  Heading,
+  FormControl,
+  FormLabel,
+  Flex,
+  Box,
+} from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 
 import icon from '../images/send-icon.png';
 
 const MotionModalContent = motion.custom(ModalContent);
 
-const Certificados = (props) => (
-  <Modal isOpen={props.isOpen} onClose={props.onClose}>
+const Certificados = ({ isOpen, onClose }) => (
+  <Modal isOpen={isOpen} onClose={onClose}>
     <ModalOverlay />
     <MotionModalContent width={['250px', '450px', '700px']} maxWidth="100%" initial={{ top: '-40%' }} animate={{ top: '0%' }} transition={{ duration: 0.45 }}>
       <ModalHeader alignSelf="center" fontSize={['18px', '32px']}>
         <Heading as="h4" fontSize={['24px', '32px']}>PET Certificados</Heading>
+        <ModalCloseButton />
       </ModalHeader>
 
       <ModalBody marginTop="40px" alignSelf="center">
@@ -49,5 +60,10 @@ const Certificados = (props) => (
     </MotionModalContent>
   </Modal>
 );
+
+Certificados.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+};
 
 export default Certificados;
