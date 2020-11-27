@@ -33,9 +33,8 @@ const NavLink = ({ children, href, onClick }) => (
     _focus={{ boxShadow: 'none' }}
   >
     <Text
-      fontFamily="Open Sans"
       fontWeight="semibold"
-      color={red}
+      color="red.500"
     >
       { children }
     </Text>
@@ -94,7 +93,6 @@ function Header() {
           <DrawerOverlay />
           <DrawerContent>
             <DrawerHeader
-              fontFamily="Open Sans"
               borderBottomWidth="2px"
             >
               PET Computação

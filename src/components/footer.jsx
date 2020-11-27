@@ -31,7 +31,6 @@ export default function Footer() {
         w="100%"
         mx="auto"
         fontSize="16px"
-        fontFamily="Open Sans"
         templateColumns={['repeat(1, 1fr)', 'repeat(2, 1fr)', 'repeat(4, 1fr)']}
       >
 
@@ -55,7 +54,7 @@ export default function Footer() {
           spacing="1"
           fontWeight="lighter"
         >
-          <ListItem fontSize="xl" fontWeight="bold">PET COMPUTAÇÃO</ListItem>
+          <ListItem fontSize="xl" fontWeight="bold">PET Computação</ListItem>
           <ListItem my={0}>Av. Humberto Monte, s/n</ListItem>
           <ListItem my={0}>UFC - Campus do Pici</ListItem>
           <ListItem my={0}>Departamento da Computação</ListItem>

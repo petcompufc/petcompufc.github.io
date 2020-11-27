@@ -22,7 +22,6 @@ export default function Emprestimo() {
         margin="20px -0.75rem -0.75rem 20px"
         padding="20px"
         background="#fff"
-        fontFamily="Open Sans"
       >
         <Heading
           color="#263238"
