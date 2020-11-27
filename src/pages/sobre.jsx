@@ -1,8 +1,8 @@
 import React from 'react';
 import {
-  Heading, Text, List, ListItem, Link, Icon, Grid,
+  Heading, Text, List, ListItem, Link, Grid,
 } from '@chakra-ui/react';
-import { GoLinkExternal } from 'react-icons/go'
+import { GoLinkExternal } from 'react-icons/go';
 
 import Layout from '../components/layout';
 import Timeline from '../components/sobre/timeline';
@@ -11,14 +11,13 @@ import Petiano from '../components/sobre/petiano';
 const SobreNos = () => (
   <Layout>
     <Heading as="h1" my={5} size="xl">Sobre o PET</Heading>
-
     <Heading as="h2" my={3} size="lg">Quem Somos?</Heading>
     <Text>
       O PETComp UFC é o Programa de Educação Tutorial do curso de Ciência da Computação da
       Universidade Federal do Ceará. O PET é um projeto da
       {' '}
       <Link color="red.500" href="http://portal.mec.gov.br/sesu-secretaria-de-educacao-superior/apresentacao" isExternal>
-        Secretaria de Educação Superior (SESu) 
+        Secretaria de Educação Superior (SESu)
         {' '}
         <GoLinkExternal style={{ display: 'inline' }} />
       </Link>
@@ -127,19 +126,11 @@ const SobreNos = () => (
         titulo="PETiano"
       />
       <Petiano
-        nome="Laura Petrola"
-        titulo="PETiana"
-      />
-      <Petiano
         nome="Amanda Cavalcante"
         titulo="PETiana"
       />
       <Petiano
         nome="João Victor"
-        titulo="PETiano"
-      />
-      <Petiano
-        nome="Rodrigo Nogueira"
         titulo="PETiano"
       />
       <Petiano
