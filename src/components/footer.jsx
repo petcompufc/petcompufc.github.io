@@ -10,7 +10,7 @@ import {
   Grid,
 } from '@chakra-ui/react';
 
-import { RiFacebookCircleLine, RiGithubLine, RiInstagramLine, RiMailSendLine, RiYoutubeLine } from "react-icons/ri";
+import { RiFacebookCircleLine, RiGithubLine, RiInstagramLine, RiMailSendLine, RiYoutubeLine } from 'react-icons/ri';
 
 import PETLogo from '../images/logo_pet-white.png';
 import DCLogo from '../images/logo_dc.png';
@@ -19,6 +19,7 @@ import UFCLogo from '../images/logo_ufc.png';
 export default function Footer() {
   return (
     <Box
+      as="footer"
       bg="#37474f"
       overflow="hidden"
       maxWidth="960"
