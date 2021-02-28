@@ -60,7 +60,7 @@ export default function Contato() {
       </Box>
 
       <Box bg="#B0B0B0">
-        <Heading as="h2" textAlign="center" marginTop="5%" fontFamily="Open sans" color="#5A5A5A">
+        <Heading as="h2" textAlign="center" marginTop="5%" color="#5A5A5A">
           Fale conosco!
         </Heading>
         <Box as="form" method="POST" w="100%" h="40%" padding="5%">
@@ -103,7 +103,7 @@ export default function Contato() {
       </Box>
 
       <Box paddingLeft="5%" marginTop="10%" w="100%" h="450px">
-        <Heading as="h3" fontFamily="Open sans"> Veja a nossa localização:</Heading>
+        <Heading as="h3"> Veja a nossa localização:</Heading>
         <Text>UFC-Campus do PICI, Departamento da computação - Bloco 910</Text>
         <Box as="iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3981.2941257549137!2d-38.57634104915102!3d-3.745976944298955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c74ba2a575c0a3%3A0xef4b74faf96eddae!2zUEVUIENvbXB1dGHDp8OjbyBVRkM!5e0!3m2!1spt-BR!2sbr!4v1595263120997!5m2!1spt-BR!2sbr" w="90%" h="300px" alt="demo" />
       </Box>

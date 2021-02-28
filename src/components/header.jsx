@@ -2,11 +2,11 @@ import { Link as GatsbyLink } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 import {
+  Box,
   Link,
   Flex,
   Text,
   Image,
-  Box,
   useDisclosure,
   Drawer,
   DrawerOverlay,
@@ -17,8 +17,6 @@ import {
 
 import Modal from './modal';
 import logo from '../images/logo-pet-red.png';
-
-const red = 'red.500';
 
 const NavLink = ({ children, href, onClick }) => (
   <Link
@@ -33,9 +31,8 @@ const NavLink = ({ children, href, onClick }) => (
     _focus={{ boxShadow: 'none' }}
   >
     <Text
-      fontFamily="Open Sans"
       fontWeight="semibold"
-      color={red}
+      color="red.500"
     >
       { children }
     </Text>
@@ -43,9 +40,13 @@ const NavLink = ({ children, href, onClick }) => (
 );
 
 NavLink.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.node.isRequired,
   href: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
+};
+
+NavLink.defaultProps = {
+  onClick: () => {},
 };
 
 function Header() {
@@ -54,7 +55,9 @@ function Header() {
   const toggleModal = () => setIsOpenModal(!isOpenModal);
   const btnRef = React.useRef();
   return (
-    <header>
+    <Box
+      as="header"
+    >
       <Flex as="nav" w="100%" bg="white" boxShadow="md" justify="space-between">
         <Link
           as={GatsbyLink}
@@ -94,7 +97,6 @@ function Header() {
           <DrawerOverlay />
           <DrawerContent>
             <DrawerHeader
-              fontFamily="Open Sans"
               borderBottomWidth="2px"
             >
               PET Computação
@@ -105,8 +107,8 @@ function Header() {
               <NavLink href="/atividades/">Atividades</NavLink>
               <NavLink href="/blog/">Blog</NavLink>
               <NavLink href="#" onClick={toggleModal}>Certificados</NavLink>
-              <Modal in={isOpenModal} onOpen={toggleModal} onClose={toggleModal} />
-              <NavLink href="/emprestimos/">Emprestimos</NavLink>
+              <Modal isOpen={isOpenModal} onOpen={toggleModal} onClose={toggleModal} />
+              <NavLink href="/emprestimos/">Empréstimos</NavLink>
               <NavLink href="/contato/">Contato</NavLink>
             </DrawerBody>
           </DrawerContent>
@@ -119,11 +121,11 @@ function Header() {
           <NavLink href="/blog/">Blog</NavLink>
           <NavLink href="#" onClick={toggleModal}>Certificados</NavLink>
           <Modal isOpen={isOpenModal} onOpen={toggleModal} onClose={toggleModal} />
-          <NavLink href="/emprestimos/">Emprestimos</NavLink>
+          <NavLink href="/emprestimos/">Empréstimos</NavLink>
           <NavLink href="/contato/">Contato</NavLink>
         </Box>
       </Flex>
-    </header>
+    </Box>
   );
 }
 

@@ -34,7 +34,7 @@ function Carousel({ images }) {
       pos="relative"
       role="group"
       overflow="hidden"
-      mt={3}
+      my={3}
       w="100%"
       h="md"
       mx="auto"
@@ -46,6 +46,7 @@ function Carousel({ images }) {
           aria-label={image.desc}
           aria-hidden={slide === index ? 'false' : 'true'}
           h="100%"
+          key={image.src}
           l="0"
           overflow="hidden"
           pos="absolute"
@@ -95,7 +96,7 @@ function Carousel({ images }) {
       <IconButton
         colorScheme="red"
         aria-label={isLocked ? 'Start slide rotation' : 'Stop slide rotation'}
-        icon={isLocked ? <GrLock /> : <GrUnlock /> }
+        icon={isLocked ? <GrLock /> : <GrUnlock />}
         onClick={() => setLocked(!isLocked)}
         isRound
         pos="absolute"
