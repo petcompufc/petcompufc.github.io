@@ -18,7 +18,7 @@ import { motion } from 'framer-motion';
 
 import icon from '../images/send-icon.png';
 
-const MotionModalContent = motion.custom(ModalContent);
+const MotionModalContent = motion(ModalContent);
 
 const Certificados = ({ isOpen, onClose }) => (
   <Modal isOpen={isOpen} onClose={onClose}>
