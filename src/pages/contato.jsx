@@ -18,7 +18,10 @@ import {
   InputGroup,
   InputRightElement,
 } from '@chakra-ui/react';
-import { TiChevronRightOutline } from 'react-icons/ti';
+
+import {
+  ChevronRightIcon,
+} from '@chakra-ui/icons';
 
 import Layout from '../components/layout';
 import Midias from '../components/midias';
@@ -38,10 +41,15 @@ export default function Contato() {
   return (
     <Layout id="layout">
 
-      <Box paddingX="2%" bg="#25BDF5">
-        <Heading as="h2" color="#263238" marginTop="6%">Contato</Heading>
+      <Box paddingX="2%" >
+        <Heading as="h2" color="#263238" marginTop="6%" mb="1%">Contato</Heading>
         <Divider />
-        <Breadcrumb spacing="8px" separator={<TiChevronRightOutline />} fontSize="16px" fontWeight="bold">
+        <Breadcrumb 
+        spacing="8px" 
+        fontWeight="bold"
+        fontSize="16px" 
+        separator={<ChevronRightIcon color="#D3D3D3" size="20px" verticalAlign="-2px" />} 
+        >
           <BreadcrumbItem>
             <BreadcrumbLink color="#d50000" href="/">Página Inicial</BreadcrumbLink>
           </BreadcrumbItem>
