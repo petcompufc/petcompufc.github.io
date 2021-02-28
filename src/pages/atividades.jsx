@@ -25,8 +25,8 @@ import {
 } from '@chakra-ui/react';
 
 import {
-    ChevronRightIcon,
-} from '@chakra-ui/icons';
+    FiChevronRight
+} from 'react-icons/fi';
 
 export default () => {
     const BreadCrumb = ({ children }) => (
@@ -43,7 +43,7 @@ export default () => {
             
             <Breadcrumb 
             spacing="8px" 
-            separator={<ChevronRightIcon color="#D3D3D3" size="20px" verticalAlign="-2px" />} 
+            separator={<Icon as={FiChevronRight} color="gray.400" size="1em" />} 
             fontSize="16px" 
             fontWeight="bold">
                 <BreadcrumbItem>
