@@ -16,6 +16,7 @@ const Evento = ({ children }) => (
     p={3}
     pos="relative"
     marginLeft={4}
+    my={3}
     maxW="100%"
     transition="all .4s"
     _even={{ backgroundColor: 'red.100' }}

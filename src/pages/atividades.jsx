@@ -28,7 +28,7 @@ import {
     FiChevronRight
 } from 'react-icons/fi';
 
-export default () => {
+const Atividades = () => {
     const BreadCrumb = ({ children }) => (
         <Box paddingX="2%" borderRadius="16px">
             <Heading 
@@ -115,3 +115,5 @@ export default () => {
     
     );
 }
+
+export default Atividades;
