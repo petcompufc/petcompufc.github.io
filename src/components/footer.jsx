@@ -61,11 +61,47 @@ export default function Footer() {
         <ListItem my={0}>Bloco 910</ListItem>
         <ListItem my={0}>petcomp@ufc.br</ListItem>
         <Grid templateColumns="repeat(3, 1fr)" rowGap={3} columnGap={2} fontSize="xl">
-          <Link href="https://github.com/petcompufc" mx="auto" isExternal color="white" textDecoration="initial"><RiGithubLine /></Link>
-          <Link href="https://www.facebook.com/PETCompUFC/" mx="auto" isExternal color="white"><RiFacebookCircleLine /></Link>
-          <Link href="https://www.instagram.com/petcompufc" mx="auto" isExternal color="white"><RiInstagramLine /></Link>
-          <Link href="https://www.youtube.com/user/petcompufc/videos" mx="auto" isExternal color="white"><RiYoutubeLine /></Link>
-          <Link href="mailto:petcomp@ufc.br" mx="auto" isExternal color="white"><RiMailSendLine /></Link>
+          <Link
+            href="https://github.com/petcompufc"
+            mx="auto"
+            isExternal
+            color="white"
+            textDecoration="initial"
+          >
+            <RiGithubLine title="GitHub" />
+          </Link>
+          <Link
+            href="https://www.facebook.com/PETCompUFC/"
+            mx="auto"
+            isExternal
+            color="white"
+          >
+            <RiFacebookCircleLine title="Facebook" />
+          </Link>
+          <Link
+            href="https://www.instagram.com/petcompufc"
+            mx="auto"
+            isExternal
+            color="white"
+          >
+            <RiInstagramLine title="Instagram" />
+          </Link>
+          <Link
+            href="https://www.youtube.com/user/petcompufc/videos"
+            mx="auto"
+            isExternal
+            color="white"
+          >
+            <RiYoutubeLine title="YouTube" />
+          </Link>
+          <Link
+            href="mailto:petcomp@ufc.br"
+            mx="auto"
+            isExternal
+            color="white"
+          >
+            <RiMailSendLine title="e-Mail" />
+          </Link>
         </Grid>
       </List>
 

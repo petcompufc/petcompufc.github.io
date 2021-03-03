@@ -71,7 +71,7 @@ function Header() {
         >
           <Image
             src={logo}
-            alt="Logo PET"
+            alt="PET Computação UFC"
             backgroundSize="contain"
             m="0"
           />

@@ -29,17 +29,17 @@ const IndexPage = () => {
       <Carousel
         slides={[{
           image: data.carousel1.childImageSharp.gatsbyImageData,
-          desc: 'Imagem 1',
+          desc: 'Cerimônia de abertura do Include 2020',
           text: 'Saiba mais sobre o PET',
         },
         {
           image: data.carousel2.childImageSharp.gatsbyImageData,
-          desc: 'Imagem 2',
+          desc: 'PETianos durante a Semana Acadêmica da Computação 2017',
           text: 'Veja quem faz parte do PET',
         },
         {
           image: data.carousel3.childImageSharp.gatsbyImageData,
-          desc: 'Imagem 3',
+          desc: 'PETianos utilizando soldador na sala do PET',
           text: 'Conheça nossas atividades',
         }]}
       />
