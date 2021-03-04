@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { StaticQuery, graphql } from 'gatsby';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import PropTypes from 'prop-types';
 import {
   Box,
   IconButton,
+  Image,
   Heading,
 } from '@chakra-ui/react';
 import {
@@ -12,12 +15,12 @@ import {
   GrUnlock,
 } from 'react-icons/gr';
 
-function Carousel({ images }) {
+function Carousel({ slides }) {
   const [isLocked, setLocked] = useState(false);
-  const [slide, setSlide] = useState(0);
+  const [slideIndex, setSlideIndex] = useState(0);
 
-  const nextSlide = () => { setSlide(slide >= (images.length - 1) ? 0 : (slide + 1)); };
-  const prevSlide = () => { setSlide(slide <= 0 ? (images.length - 1) : (slide - 1)); };
+  const nextSlide = () => setSlideIndex(slideIndex >= (slides.length - 1) ? 0 : (slideIndex + 1));
+  const prevSlide = () => setSlideIndex(slideIndex <= 0 ? (slides.length - 1) : (slideIndex - 1));
 
   useEffect(() => {
     if (!isLocked) {
@@ -29,7 +32,9 @@ function Carousel({ images }) {
 
   return (
     <Box
+      aria-atomic="false"
       aria-label="masthead"
+      aria-live={isLocked ? 'polite' : 'off'}
       aria-roledescription="carousel"
       pos="relative"
       role="group"
@@ -40,29 +45,26 @@ function Carousel({ images }) {
       mx="auto"
       borderRadius={16}
     >
-      {images.map((image, index) => (
+      {slides.map((slide, index) => (
         <Box
           aria-roledescription="slide"
-          aria-label={image.desc}
-          aria-hidden={slide === index ? 'false' : 'true'}
+          aria-hidden={slideIndex === index ? 'false' : 'true'}
           h="100%"
-          key={image.src}
-          l="0"
+          key={slide.desc}
+          left="0"
           overflow="hidden"
           pos="absolute"
-          transform={`translateX(${(index - slide) * 100}%)`}
+          transform={`translateX(${(index - slideIndex) * 100}%)`}
           transition="all 0.5s 250ms ease-out"
           top="0"
           w="100%"
         >
-          <Box
-            t="0"
-            l="0"
-            w="100%"
+          <Image
+            alt={slide.desc}
+            as={GatsbyImage}
             h="100%"
-            bgImage={`url(${image.src})`}
-            bgSize="cover"
-            bgPos="center center"
+            image={slide.image}
+            left={0}
             pos="absolute"
           />
           <Heading
@@ -76,7 +78,7 @@ function Carousel({ images }) {
             pos="absolute"
             w="100%"
           >
-            {image.text}
+            {slide.text}
           </Heading>
         </Box>
       ))}
@@ -124,9 +126,31 @@ function Carousel({ images }) {
 }
 
 Carousel.propTypes = {
-  images: PropTypes.arrayOf(PropTypes.shape({
-    src: PropTypes.string,
+  slides: PropTypes.arrayOf(PropTypes.shape({
+    image: PropTypes.shape({
+      childImageSharp: PropTypes.shape({
+        gatsbyImageData: PropTypes.shape({
+          layout: PropTypes.string,
+          backgroundColor: PropTypes.color,
+          images: PropTypes.shape({
+            fallback: PropTypes.shape({
+              src: PropTypes.string,
+              srcSet: PropTypes.string,
+              size: PropTypes.string,
+            }),
+            sources: PropTypes.arrayOf(PropTypes.shape({
+              srcSet: PropTypes.string,
+              type: PropTypes.string,
+              sizes: PropTypes.string,
+            })),
+            widht: PropTypes.integer,
+            height: PropTypes.integer,
+          }),
+        }),
+      }),
+    }),
     desc: PropTypes.string,
+    text: PropTypes.string,
   })).isRequired,
 };
 

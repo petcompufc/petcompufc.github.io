@@ -51,7 +51,7 @@ NavLink.defaultProps = {
 
 function Header() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [isOpenModal, setIsOpenModal] = React.useState();
+  const [isOpenModal, setIsOpenModal] = React.useState(false);
   const toggleModal = () => setIsOpenModal(!isOpenModal);
   const btnRef = React.useRef();
   return (
@@ -71,7 +71,7 @@ function Header() {
         >
           <Image
             src={logo}
-            alt="Logo PET"
+            alt="PET Computação UFC"
             backgroundSize="contain"
             m="0"
           />

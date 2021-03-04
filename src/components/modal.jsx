@@ -1,7 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
+  IconButton,
   Input,
+  InputGroup,
+  InputRightElement,
   Modal,
   ModalOverlay,
   ModalContent,
@@ -11,12 +14,10 @@ import {
   Heading,
   FormControl,
   FormLabel,
-  Flex,
   Box,
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
-
-import icon from '../images/send-icon.png';
+import { FiSend } from 'react-icons/fi';
 
 const MotionModalContent = motion(ModalContent);
 
@@ -33,26 +34,36 @@ const Certificados = ({ isOpen, onClose }) => (
         <Box as="form" method="POST" name="buscar" action="" mb="40px">
           <FormControl isRequired>
             <FormLabel htmlFor="cpf" style={{ fontSize: '16px' }}>Digite abaixo o seu CPF e emita já o seu certificado!</FormLabel>
-            <Flex border="solid 1px #000000" borderRadius="32px" px="8px" h="40px" w={['200px', '350px', '500px']} mt="16px">
+            <InputGroup
+              alignItems="center"
+              border="1px solid #000"
+              borderRadius="full"
+              display="flex"
+              mt={3}
+              px={5}
+            >
               <Input
-                h="20px"
                 id="cpf"
                 name="chave"
                 placeholder="CPF"
-                style={{
-                  padding: '0',
-                  paddingLeft: '8px',
-                  border: 'none',
-                  marginTop: '8px',
-                  fontSize: '24px',
-                  fontFamily: 'Roboto',
-                }}
+                padding="0"
+                paddingLeft="8px"
+                border="none"
+                fontSize="md"
                 _focus={{
                   outline: 'none',
                 }}
               />
-              <input type="image" alt="Submit" src={icon} height="20px" width="20px" style={{ marginTop: '8px' }} />
-            </Flex>
+              <InputRightElement>
+                <IconButton
+                  aria-label="Buscar certificados"
+                  icon={<FiSend />}
+                  isRound
+                  type="submit"
+                  variant="unstyled"
+                />
+              </InputRightElement>
+            </InputGroup>
           </FormControl>
         </Box>
       </ModalBody>

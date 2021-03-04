@@ -1,8 +1,4 @@
 import React from 'react';
-
-import Layout from '../components/layout';
-import Manual from '../ManualdeEmprestimo.pdf';
-
 import {
   Box,
   Button,
@@ -15,21 +11,28 @@ import {
   Heading,
   Divider,
 } from '@chakra-ui/react';
+import { FiChevronRight } from 'react-icons/fi';
 
-import { FiChevronRight } from 'react-icons/fi'
+import Layout from '../components/layout';
+import Manual from '../ManualdeEmprestimo.pdf';
+import SEO from '../components/seo';
 
 export default function Emprestimo() {
   return (
     <Layout>
+      <SEO
+        title="Empréstimos"
+        description="Veja como funciona o sistema de empréstimos do PET Computação"
+      />
       <Box
         padding="2%"
         fontFamily="Open Sans"
       >
         <Heading
-        as="h2"
-        color="#263238"
-        mt="6%"
-        mb="1%"
+          as="h2"
+          color="#263238"
+          mt="6%"
+          mb="1%"
         >
           Empréstimos
         </Heading>
@@ -40,8 +43,8 @@ export default function Emprestimo() {
           spacing="8px"
           fontWeight="bold"
           fontSize="16px"
-          separator={<Icon as={FiChevronRight} color="gray.400" size="1em" />} 
-          >
+          separator={<Icon as={FiChevronRight} color="gray.400" size="1em" />}
+        >
           <BreadcrumbItem>
             <BreadcrumbLink color="#d50000" href="/">Página Inicial</BreadcrumbLink>
           </BreadcrumbItem>
@@ -54,10 +57,10 @@ export default function Emprestimo() {
       </Box>
 
       <Text
-      paddingX="2%" 
-      color="#666"
-      mt="5px"
-      textAlign="justify"
+        paddingX="2%"
+        color="#666"
+        mt="5px"
+        textAlign="justify"
       >
         O PET possui um acervo de itens que podem ser de interesse da comunidade, desde livros-texto de algumas disciplinas a componentes de arduino, que são divididos entre livre uso e uso restrito.
         <br />
@@ -82,9 +85,9 @@ export default function Emprestimo() {
           <Link color="white" href={Manual} isExternal> Manual de Empréstimos </Link>
         </Button>
       </Text>
-        <br />
-        <br />
-      
+      <br />
+      <br />
+
     </Layout>
   );
 }
