@@ -18,13 +18,13 @@ import {
   InputGroup,
   InputRightElement,
 } from '@chakra-ui/react';
-;
 import {
-  FiChevronRight
+  FiChevronRight,
 } from 'react-icons/fi';
 
 import Layout from '../components/layout';
 import Midias from '../components/midias';
+import SEO from '../components/seo';
 
 export default function Contato() {
   const hasWindow = (typeof window !== 'undefined');
@@ -40,15 +40,18 @@ export default function Contato() {
 
   return (
     <Layout id="layout">
-
-      <Box paddingX="2%" >
+      <SEO
+        title="Contato"
+        description="Entre em contato com o PET Computação digitalmente"
+      />
+      <Box paddingX="2%">
         <Heading as="h2" color="#263238" marginTop="6%" mb="1%">Contato</Heading>
         <Divider />
-        <Breadcrumb 
-        spacing="8px" 
-        fontWeight="bold"
-        fontSize="16px" 
-        separator={<Icon as={FiChevronRight} color="gray.400" size="1em" />} 
+        <Breadcrumb
+          spacing="8px"
+          fontWeight="bold"
+          fontSize="16px"
+          separator={<Icon as={FiChevronRight} color="gray.400" size="1em" />}
         >
           <BreadcrumbItem>
             <BreadcrumbLink color="#d50000" href="/">Página Inicial</BreadcrumbLink>

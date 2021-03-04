@@ -7,9 +7,14 @@ import { GoLinkExternal } from 'react-icons/go';
 import Layout from '../components/layout';
 import Timeline from '../components/sobre/timeline';
 import Petiano from '../components/sobre/petiano';
+import SEO from '../components/seo';
 
 const SobreNos = () => (
   <Layout>
+    <SEO
+      title="Sobre Nós"
+      description="Saiba mais sobre o que é o PET Computação e a história do grupo até os dias de hoje"
+    />
     <Heading as="h1" my={5} size="xl">Sobre o PET</Heading>
     <Heading as="h2" my={3} size="lg">Quem Somos?</Heading>
     <Text>

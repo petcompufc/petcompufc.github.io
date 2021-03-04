@@ -1,5 +1,7 @@
 import { useStaticQuery, graphql } from 'gatsby';
 import React from 'react';
+
+import SEO from '../components/seo';
 import Carousel from '../components/index/carousel';
 import Layout from '../components/layout';
 
@@ -26,6 +28,10 @@ const IndexPage = () => {
 
   return (
     <Layout>
+      <SEO
+        title="Página Inicial"
+        description="O PET Computação trabalha para enriquecer a experiência de alunos de dentro e fora da Universidade Federal do Ceará"
+      />
       <Carousel
         slides={[{
           image: data.carousel1.childImageSharp.gatsbyImageData,
