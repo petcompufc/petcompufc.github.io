@@ -2,144 +2,198 @@ import React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 
 import {
-  useTheme,
   Box,
-  List,
-  ListItem,
+  Flex,
   Link,
+  VStack,
+  Image,
   Stack,
-  Grid,
+  Heading,
+  Icon,
 } from '@chakra-ui/react';
 
 import {
-  RiFacebookCircleLine,
+  RiFacebookLine,
   RiGithubLine,
   RiInstagramLine,
-  RiMailSendLine,
   RiYoutubeLine,
 } from 'react-icons/ri';
 
-export default function Footer() {
-  const theme = useTheme();
+import logoPET from '../images/logo-pet-white.svg';
 
+export default function Footer() {
   return (
-    <Grid
+    <Stack
+      align={['center', 'flex-start']}
       as="footer"
       bg="#37474f"
       color="#ffffff"
-      px={`calc(50% - calc(${theme.sizes.container.xl} / 2))`}
-      py={5}
+      direction={['column', 'row']}
+      p={10}
+      spacing={[5, 10]}
       w="100%"
-      fontSize="16px"
-      templateColumns={['repeat(1, 1fr)', 'repeat(2, 1fr)', 'repeat(4, 1fr)']}
+      justifyContent="center"
+      row="sm"
     >
-
       <Box
-        maxW="300px"
-        mx="auto"
-        float="left"
-        boxSizing="border-box"
+        width="10rem"
       >
         <StaticImage
-          alt="PETComp UFC"
+          alt="PETCOMP ufc"
           src="../images/logo-pet-white.svg"
-          width={300}
         />
       </Box>
 
-      <List
-        mx="auto"
-        float="left"
-        minH="1px"
-        spacing="1"
-        fontWeight="lighter"
+      <Box
+        as="address"
+        fontStyle="normal"
       >
-        <ListItem fontSize="xl" fontWeight="bold">PET Computação</ListItem>
-        <ListItem my={0}>Av. Humberto Monte, s/n</ListItem>
-        <ListItem my={0}>UFC - Campus do Pici</ListItem>
-        <ListItem my={0}>Departamento da Computação</ListItem>
-        <ListItem my={0}>Bloco 910</ListItem>
-        <ListItem my={0}>petcomp@ufc.br</ListItem>
-        <Grid templateColumns="repeat(3, 1fr)" rowGap={3} columnGap={2} fontSize="xl">
+        <Heading as="h3" fontSize="xl" mb={3}>PET Computação</Heading>
+        Av. Humberto Monte, s/n
+        <br />
+        UFC - Campus do Pici
+        <br />
+        Departamento de Computação
+        <br />
+        Bloco 910
+        <br />
+        <Link href="mailto:petcomp@ufc.br">petcomp@ufc.br</Link>
+      </Box>
+
+      <VStack
+        alignItems="flex-begin"
+        spacing={3}
+      >
+        <Box
+          display={['none', 'block']}
+        >
+          <Heading
+            as="h3"
+            fontSize="xl"
+            mb={3}
+          >
+            Links
+          </Heading>
+          <Link
+            href="http://www.ufc.br/"
+            isExternal
+          >
+            Portal UFC
+          </Link>
+          <br />
+          <Link
+            href="http://portal.dc.ufc.br/"
+            isExternal
+          >
+            Departamento de Computação
+          </Link>
+          <br />
+          <Link href="https://cc.ufc.br/" isExternal color="white">Curso de Ciência da Computação</Link>
+        </Box>
+
+        <Flex
+          alignItems="center"
+          justify="space-evenly"
+        >
           <Link
             href="https://github.com/petcompufc"
-            mx="auto"
             isExternal
-            color="white"
             textDecoration="initial"
           >
-            <RiGithubLine title="GitHub" />
+            <Icon
+              as={RiGithubLine}
+              boxSize={6}
+              borderWidth={2}
+              borderColor="whiteAlpha.400"
+              borderRadius="full"
+              boxSizing="content-box"
+              padding={2}
+              transition="all .4s"
+              _hover={{ borderColor: 'whiteAlpha.800' }}
+            />
           </Link>
           <Link
+            aria-label="Acesse a nossa página do Facebook"
             href="https://www.facebook.com/PETCompUFC/"
-            mx="auto"
             isExternal
-            color="white"
           >
-            <RiFacebookCircleLine title="Facebook" />
+            <Icon
+              as={RiFacebookLine}
+              boxSize={6}
+              borderWidth={2}
+              borderColor="whiteAlpha.400"
+              borderRadius="full"
+              boxSizing="content-box"
+              padding={2}
+              transition="all .4s"
+              _hover={{ borderColor: 'whiteAlpha.800' }}
+            />
           </Link>
           <Link
+            aria-label="Veja o nosso instagram"
             href="https://www.instagram.com/petcompufc"
-            mx="auto"
             isExternal
-            color="white"
           >
-            <RiInstagramLine title="Instagram" />
+            <Icon
+              as={RiInstagramLine}
+              boxSize={6}
+              borderWidth={2}
+              borderColor="whiteAlpha.400"
+              borderRadius="full"
+              boxSizing="content-box"
+              padding={2}
+              transition="all .4s"
+              _hover={{ borderColor: 'whiteAlpha.800' }}
+            />
           </Link>
           <Link
+            aria-label="Assista aos nossos vídeos no YouTube"
             href="https://www.youtube.com/user/petcompufc/videos"
-            mx="auto"
             isExternal
-            color="white"
           >
-            <RiYoutubeLine title="YouTube" />
+            <Icon
+              as={RiYoutubeLine}
+              boxSize={6}
+              borderWidth={2}
+              borderColor="whiteAlpha.400"
+              borderRadius="full"
+              boxSizing="content-box"
+              padding={2}
+              transition="all .4s"
+              _hover={{ borderColor: 'whiteAlpha.800' }}
+            />
           </Link>
-          <Link
-            href="mailto:petcomp@ufc.br"
-            mx="auto"
-            isExternal
-            color="white"
-          >
-            <RiMailSendLine title="e-Mail" />
-          </Link>
-        </Grid>
-      </List>
+        </Flex>
+      </VStack>
 
-      <List
-        mx="auto"
-        float="left"
-        minH="1px"
-        spacing="1"
-        fontWeight="lighter"
+      <VStack
+        align="center"
+        display={['none', 'flex']}
+        spacing={5}
       >
-        <ListItem fontSize="24px" fontWeight="bold">Links</ListItem>
-        <ListItem>
-          <Link href="http://www.ufc.br/" isExternal color="white">Portal UFC</Link>
-        </ListItem>
-        <ListItem marginTop="-10px">
-          <Link href="http://portal.dc.ufc.br/" isExternal color="white">Departamento de Computação</Link>
-        </ListItem>
-        <ListItem marginTop="-10px">
-          <Link href="https://cc.ufc.br/" isExternal color="white">Curso de Ciência da Computação</Link>
-        </ListItem>
-      </List>
-
-      <Stack
-        mx="auto"
-      >
-        <Link mx="auto" w="90%" href="http://www.ufc.br/" isExternal>
+        <Link
+          href="http://www.ufc.br/"
+          width="15rem"
+          isExternal
+        >
           <StaticImage
             alt="Universidade Federal do Ceará"
+            width={300}
             src="../images/logo-ufc.svg"
           />
         </Link>
-        <Link mx="auto" w="85%" href="http://portal.dc.ufc.br/" isExternal>
+        <Link
+          href="http://portal.dc.ufc.br/"
+          width="15rem"
+          isExternal
+        >
           <StaticImage
             alt="Departamento de Computação"
+            width={300}
             src="../images/logo-dc.svg"
           />
         </Link>
-      </Stack>
-    </Grid>
+      </VStack>
+    </Stack>
   );
 }
