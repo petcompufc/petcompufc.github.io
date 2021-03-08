@@ -17,7 +17,10 @@ const SobreNos = () => (
     />
     <Heading as="h1" my={5} size="xl">Sobre o PET</Heading>
     <Heading as="h2" my={3} size="lg">Quem Somos?</Heading>
-    <Text>
+    <Text
+      maxWidth="50em"
+      minWidth="30em"
+    >
       O PETComp UFC é o Programa de Educação Tutorial do curso de Ciência da Computação da
       Universidade Federal do Ceará. O PET é um projeto da
       {' '}
@@ -43,7 +46,11 @@ const SobreNos = () => (
       atividades que abordam esses 3 pilares, como:
     </Text>
 
-    <List styleType="disc" fontFamily="body" my={2}>
+    <List
+      maxWidth="50em"
+      my={2}
+      styleType="disc"
+    >
       <ListItem>
         <Link color="red.500" href="https://oci.org.br/" isExternal>
           Olimpíada Cearense de Informática

@@ -57,36 +57,52 @@ export default function Emprestimo() {
       </Box>
 
       <Text
-        paddingX="2%"
-        color="#666"
-        mt="5px"
-        textAlign="justify"
+        maxWidth="50em"
+        mt={1}
+        mb={4}
       >
-        O PET possui um acervo de itens que podem ser de interesse da comunidade, desde livros-texto de algumas disciplinas a componentes de arduino, que são divididos entre livre uso e uso restrito.
-        <br />
-        <br />
-        Para pegar um desses itens emprestado por tempo limitado, basta preencher o formulário e entregar a um petiano na sala do PET, que avaliaremos a solicitação.
-        <br />
-        <br />
-        Caso deseje um item que já foi emprestado, há a possibilidade de entrar para a fila de espera, então, assim que o item estiver disponível, mandaremos um e-mail e você terá 1 dia útil de exclusividade para garantí-lo. Além disso, se não houver lista de espera, é possível solicitar a renovação do empréstimo, porém com o máximo de 5 vezes.
-        <br />
-        <br />
-        Importante informar que prezamos bastante pela integridade dos itens, assim como com prazos de entrega, por isso possuímos um sistema de punição, que pode acarretar em banimento do usuário e ele não poderá realizar empréstimos futuros.
-        <br />
-        <br />
-        Se deseja saber mais detalhes, ou até mesmo imprimir o formulário de empréstimo, acesse o manual.
-        <br />
-        <br />
-        <Button
-          _hover={{ bg: '#a40000' }}
-          _active={{ bg: '#8b0000' }}
-          colorScheme="red"
-        >
-          <Link color="white" href={Manual} isExternal> Manual de Empréstimos </Link>
-        </Button>
+        O PET possui um acervo de itens que podem ser de interesse da comunidade, desde
+        livros-texto de algumas disciplinas a componentes de arduino, que são divididos entre
+        livre uso e uso restrito.
       </Text>
-      <br />
-      <br />
+      <Text
+        maxWidth="50em"
+        mb={4}
+      >
+        Para pegar um desses itens emprestado por tempo limitado, basta preencher o formulário e
+        entregar a um petiano na sala do PET, que avaliaremos a solicitação.
+      </Text>
+      <Text
+        maxWidth="50em"
+        mb={4}
+      >
+        Caso deseje um item que já foi emprestado, há a possibilidade de entrar para a fila de
+        espera, então, assim que o item estiver disponível, mandaremos um e-mail e você terá 1 dia
+        útil de exclusividade para garantí-lo. Além disso, se não houver lista de espera, é
+        possível solicitar a renovação do empréstimo, porém com o máximo de 5 vezes.
+      </Text>
+      <Text
+        maxWidth="50em"
+        mb={4}
+      >
+        Importante informar que prezamos bastante pela integridade dos itens, assim como com prazos
+        de entrega, por isso possuímos um sistema de punição, que pode acarretar em banimento do
+        usuário e ele não poderá realizar empréstimos futuros.
+      </Text>
+      <Text
+        maxWidth="50em"
+        mb={4}
+      >
+        Se deseja saber mais detalhes, ou até mesmo imprimir o formulário de empréstimo, acesse o
+        manual.
+      </Text>
+      <Button
+        _hover={{ bg: '#a40000' }}
+        _active={{ bg: '#8b0000' }}
+        colorScheme="red"
+      >
+        <Link color="white" href={Manual} isExternal> Manual de Empréstimos </Link>
+      </Button>
 
     </Layout>
   );

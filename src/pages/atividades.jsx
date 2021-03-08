@@ -97,9 +97,12 @@ const Atividades = () => {
         paddingX="2%"
         borderRadius="16px"
         color="#666"
+        maxWidth="50em"
         textAlign="justify"
       >
-        O Pet realiza atividades voltadas para toda a comunidade de computação, seja dentro ou fora da UFC. Elas são divididas em 3 pilares, os quais são Ensino, Pesquisa e Extensão. Para saber mais sobre cada uma, clique em seu respectivo ícone.
+        O Pet realiza atividades voltadas para toda a comunidade de computação, seja dentro ou fora
+        da UFC. Elas são divididas em 3 pilares, os quais são Ensino, Pesquisa e Extensão. Para
+        saber mais sobre cada uma, clique em seu respectivo ícone.
       </Text>
 
       <Grid mt="5%" templateColumns="repeat(3, 1fr)" gap="2">

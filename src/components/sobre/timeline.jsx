@@ -17,7 +17,7 @@ const Evento = ({ children }) => (
     pos="relative"
     marginLeft={4}
     my={3}
-    maxW="100%"
+    maxW="50em"
     transition="all .4s"
     _even={{ backgroundColor: 'red.100' }}
     _hover={{
@@ -60,8 +60,9 @@ const Timeline = ({ eventos }) => (
         height: '100%',
       },
     }}
+    maxWidth="fit-content"
+    mx="auto"
     position="relative"
-    w="100%"
   >
     {eventos.map((evento) => (
       <Evento>

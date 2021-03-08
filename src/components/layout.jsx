@@ -14,7 +14,6 @@ const Layout = ({ children }) => (
     <Header />
     <Box
       as="main"
-      maxW="2xl"
       minW="100vmin"
       mx="auto"
       px={3}

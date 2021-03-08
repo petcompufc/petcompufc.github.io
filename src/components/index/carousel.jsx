@@ -35,14 +35,15 @@ function Carousel({ slides }) {
       aria-label="masthead"
       aria-live={isLocked ? 'polite' : 'off'}
       aria-roledescription="carousel"
+      borderRadius={8}
+      height="lg"
+      maxWidth="4xl"
+      mx="auto"
+      my={3}
+      overflow="hidden"
       pos="relative"
       role="group"
-      overflow="hidden"
-      my={3}
-      w="100%"
-      h="md"
-      mx="auto"
-      borderRadius={8}
+      width="100%"
       sx={{ '-webkit-mask-image': '-webkit-radial-gradient(white, black)' }}
     >
       {slides.map((slide, index) => {
