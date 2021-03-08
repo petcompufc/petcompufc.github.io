@@ -19,7 +19,6 @@ const SobreNos = () => (
     <Heading as="h2" my={3} size="lg">Quem Somos?</Heading>
     <Text
       maxWidth="50em"
-      minWidth="30em"
     >
       O PETComp UFC é o Programa de Educação Tutorial do curso de Ciência da Computação da
       Universidade Federal do Ceará. O PET é um projeto da
