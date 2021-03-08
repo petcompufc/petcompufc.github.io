@@ -13,7 +13,10 @@ import {
   DrawerContent,
   DrawerBody,
   DrawerHeader,
+  IconButton,
+  DrawerCloseButton,
 } from '@chakra-ui/react';
+import { HiMenu } from 'react-icons/hi';
 
 import Modal from './modal';
 import logo from '../images/logo-pet-red.png';
@@ -58,7 +61,7 @@ function Header() {
     <Box
       as="header"
     >
-      <Flex as="nav" w="100%" bg="white" boxShadow="md" justify="space-between">
+      <Flex alignItems="center" as="nav" w="100%" bg="white" boxShadow="md" justify="space-between">
         <Link
           as={GatsbyLink}
           to="/"
@@ -77,17 +80,17 @@ function Header() {
           />
         </Link>
 
-        <Box ref={btnRef} display={{ base: 'flex', lg: 'none' }} mr={3} onClick={onOpen}>
-          <svg
-            fill="black"
-            width="20px"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <title>Menu</title>
-            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-          </svg>
-        </Box>
+        <IconButton
+          aria-label="Abrir Menu"
+          display={{ base: 'flex', lg: 'none' }}
+          fontSize="2xl"
+          icon={<HiMenu />}
+          mr={3}
+          onClick={onOpen}
+          ref={btnRef}
+          size="lg"
+          variant="link"
+        />
         <Drawer
           isOpen={isOpen}
           placement="right"
@@ -96,6 +99,7 @@ function Header() {
         >
           <DrawerOverlay />
           <DrawerContent>
+            <DrawerCloseButton />
             <DrawerHeader
               borderBottomWidth="2px"
             >
