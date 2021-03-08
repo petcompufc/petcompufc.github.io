@@ -6,7 +6,6 @@ import {
   Flex,
   Link,
   VStack,
-  Image,
   Stack,
   Heading,
   Icon,
@@ -18,8 +17,6 @@ import {
   RiInstagramLine,
   RiYoutubeLine,
 } from 'react-icons/ri';
-
-import logoPET from '../images/logo-pet-white.svg';
 
 export default function Footer() {
   return (
@@ -33,7 +30,6 @@ export default function Footer() {
       spacing={[5, 10]}
       w="100%"
       justifyContent="center"
-      row="sm"
     >
       <Box
         width="10rem"
