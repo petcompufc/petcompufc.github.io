@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { StaticQuery, graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import PropTypes from 'prop-types';
 import {
@@ -43,45 +42,49 @@ function Carousel({ slides }) {
       w="100%"
       h="md"
       mx="auto"
-      borderRadius={16}
+      borderRadius={8}
+      sx={{ '-webkit-mask-image': '-webkit-radial-gradient(white, black)' }}
     >
-      {slides.map((slide, index) => (
-        <Box
-          aria-roledescription="slide"
-          aria-hidden={slideIndex === index ? 'false' : 'true'}
-          h="100%"
-          key={slide.desc}
-          left="0"
-          overflow="hidden"
-          pos="absolute"
-          transform={`translateX(${(index - slideIndex) * 100}%)`}
-          transition="all 0.5s 250ms ease-out"
-          top="0"
-          w="100%"
-        >
-          <Image
-            alt={slide.desc}
-            as={GatsbyImage}
+      {slides.map((slide, index) => {
+        const image = getImage(slide.image);
+        return (
+          <Box
+            aria-roledescription="slide"
+            aria-hidden={slideIndex === index ? 'false' : 'true'}
             h="100%"
-            image={slide.image}
-            left={0}
+            key={slide.desc}
+            left="0"
+            overflow="hidden"
             pos="absolute"
-          />
-          <Heading
-            as="h3"
-            bg="rgba(0, 0, 0, 0.4)"
-            l="0"
-            t="0"
-            p={2}
-            color="white"
-            fontSize="4xl"
-            pos="absolute"
+            transform={`translateX(${(index - slideIndex) * 100}%)`}
+            transition="all 0.5s 250ms ease-out"
+            top="0"
             w="100%"
           >
-            {slide.text}
-          </Heading>
-        </Box>
-      ))}
+            <Image
+              alt={slide.desc}
+              as={GatsbyImage}
+              h="100%"
+              image={image}
+              left={0}
+              pos="absolute"
+            />
+            <Heading
+              as="h3"
+              bg="rgba(0, 0, 0, 0.4)"
+              l="0"
+              t="0"
+              p={2}
+              color="white"
+              fontSize="4xl"
+              pos="absolute"
+              w="100%"
+            >
+              {slide.text}
+            </Heading>
+          </Box>
+        );
+      })}
       <IconButton
         colorScheme="red"
         aria-label="Go to previous slide"
@@ -102,9 +105,8 @@ function Carousel({ slides }) {
         onClick={() => setLocked(!isLocked)}
         isRound
         pos="absolute"
-        left="0"
-        right="0"
-        mx="auto"
+        left="50%"
+        transform="translateX(-50%)"
         size="md"
         bottom={2}
       />
