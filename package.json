@@ -40,7 +40,7 @@
     "chakra-ui",
     "petcomp"
   ],
-  "license": "0BSD",
+  "license": "MIT",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
