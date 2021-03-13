@@ -65,7 +65,7 @@ const Timeline = ({ eventos }) => (
     position='relative'
   >
     {eventos.map((evento) => (
-      <Evento>
+      <Evento key={evento.acontecimento}>
         <Heading as='h4' size='md'>{evento.ano}</Heading>
         <Text>{evento.acontecimento}</Text>
       </Evento>
