@@ -1,9 +1,9 @@
-import { useStaticQuery, graphql } from 'gatsby';
-import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby'
+import React from 'react'
 
-import SEO from '../components/seo';
-import Carousel from '../components/index/carousel';
-import Layout from '../components/layout';
+import SearchOptimization from '../components/searchOptimization'
+import Carousel from '../components/index/carousel'
+import Layout from '../components/layout'
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
@@ -24,33 +24,33 @@ const IndexPage = () => {
         }
       },
     }
-  `);
+  `)
 
   return (
     <Layout>
-      <SEO
-        title="Página Inicial"
-        description="O PET Computação trabalha para enriquecer a experiência de alunos de dentro e fora da Universidade Federal do Ceará"
+      <SearchOptimization
+        title='Página Inicial'
+        description='O PET Computação trabalha para enriquecer a experiência de alunos de dentro e fora da Universidade Federal do Ceará'
       />
       <Carousel
         slides={[{
           image: data.carousel1.childImageSharp.gatsbyImageData,
           desc: 'Cerimônia de abertura do Include 2020',
-          text: 'Saiba mais sobre o PET',
+          text: 'Saiba mais sobre o PET'
         },
         {
           image: data.carousel2.childImageSharp.gatsbyImageData,
           desc: 'PETianos durante a Semana Acadêmica da Computação 2017',
-          text: 'Veja quem faz parte do PET',
+          text: 'Veja quem faz parte do PET'
         },
         {
           image: data.carousel3.childImageSharp.gatsbyImageData,
           desc: 'PETianos utilizando soldador na sala do PET',
-          text: 'Conheça nossas atividades',
+          text: 'Conheça nossas atividades'
         }]}
       />
     </Layout>
-  );
-};
+  )
+}
 
-export default IndexPage;
+export default IndexPage

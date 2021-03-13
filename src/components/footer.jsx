@@ -1,5 +1,5 @@
-import React from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
+import React from 'react'
+import { StaticImage } from 'gatsby-plugin-image'
 
 import {
   Box,
@@ -8,43 +8,43 @@ import {
   VStack,
   Stack,
   Heading,
-  Icon,
-} from '@chakra-ui/react';
+  Icon
+} from '@chakra-ui/react'
 
 import {
   RiFacebookLine,
   RiGithubLine,
   RiInstagramLine,
-  RiYoutubeLine,
-} from 'react-icons/ri';
+  RiYoutubeLine
+} from 'react-icons/ri'
 
-export default function Footer() {
+export default function Footer () {
   return (
     <Stack
       align={['center', 'flex-start']}
-      as="footer"
-      bg="#37474f"
-      color="#ffffff"
+      as='footer'
+      bg='#37474f'
+      color='#ffffff'
       direction={['column', 'row']}
       p={10}
       spacing={[5, 10]}
-      w="100%"
-      justifyContent="center"
+      w='100%'
+      justifyContent='center'
     >
       <Box
-        width="10rem"
+        width='10rem'
       >
         <StaticImage
-          alt="PETCOMP ufc"
-          src="../images/logo-pet-white.svg"
+          alt='PETCOMP ufc'
+          src='../images/logo-pet-white.svg'
         />
       </Box>
 
       <Box
-        as="address"
-        fontStyle="normal"
+        as='address'
+        fontStyle='normal'
       >
-        <Heading as="h3" fontSize="xl" mb={3}>PET Computação</Heading>
+        <Heading as='h3' fontSize='xl' mb={3}>PET Computação</Heading>
         Av. Humberto Monte, s/n
         <br />
         UFC - Campus do Pici
@@ -53,109 +53,109 @@ export default function Footer() {
         <br />
         Bloco 910
         <br />
-        <Link href="mailto:petcomp@ufc.br">petcomp@ufc.br</Link>
+        <Link href='mailto:petcomp@ufc.br'>petcomp@ufc.br</Link>
       </Box>
 
       <VStack
-        alignItems="flex-begin"
+        alignItems='flex-begin'
         spacing={3}
       >
         <Box
           display={['none', 'block']}
         >
           <Heading
-            as="h3"
-            fontSize="xl"
+            as='h3'
+            fontSize='xl'
             mb={3}
           >
             Links
           </Heading>
           <Link
-            href="http://www.ufc.br/"
+            href='http://www.ufc.br/'
             isExternal
           >
             Portal UFC
           </Link>
           <br />
           <Link
-            href="http://portal.dc.ufc.br/"
+            href='http://portal.dc.ufc.br/'
             isExternal
           >
             Departamento de Computação
           </Link>
           <br />
-          <Link href="https://cc.ufc.br/" isExternal color="white">Curso de Ciência da Computação</Link>
+          <Link href='https://cc.ufc.br/' isExternal color='white'>Curso de Ciência da Computação</Link>
         </Box>
 
         <Flex
-          alignItems="center"
-          justify="space-evenly"
+          alignItems='center'
+          justify='space-evenly'
         >
           <Link
-            href="https://github.com/petcompufc"
+            href='https://github.com/petcompufc'
             isExternal
-            textDecoration="initial"
+            textDecoration='initial'
           >
             <Icon
               as={RiGithubLine}
               boxSize={6}
               borderWidth={2}
-              borderColor="whiteAlpha.400"
-              borderRadius="full"
-              boxSizing="content-box"
+              borderColor='whiteAlpha.400'
+              borderRadius='full'
+              boxSizing='content-box'
               padding={2}
-              transition="all .4s"
+              transition='all .4s'
               _hover={{ borderColor: 'whiteAlpha.800' }}
             />
           </Link>
           <Link
-            aria-label="Acesse a nossa página do Facebook"
-            href="https://www.facebook.com/PETCompUFC/"
+            aria-label='Acesse a nossa página do Facebook'
+            href='https://www.facebook.com/PETCompUFC/'
             isExternal
           >
             <Icon
               as={RiFacebookLine}
               boxSize={6}
               borderWidth={2}
-              borderColor="whiteAlpha.400"
-              borderRadius="full"
-              boxSizing="content-box"
+              borderColor='whiteAlpha.400'
+              borderRadius='full'
+              boxSizing='content-box'
               padding={2}
-              transition="all .4s"
+              transition='all .4s'
               _hover={{ borderColor: 'whiteAlpha.800' }}
             />
           </Link>
           <Link
-            aria-label="Veja o nosso instagram"
-            href="https://www.instagram.com/petcompufc"
+            aria-label='Veja o nosso instagram'
+            href='https://www.instagram.com/petcompufc'
             isExternal
           >
             <Icon
               as={RiInstagramLine}
               boxSize={6}
               borderWidth={2}
-              borderColor="whiteAlpha.400"
-              borderRadius="full"
-              boxSizing="content-box"
+              borderColor='whiteAlpha.400'
+              borderRadius='full'
+              boxSizing='content-box'
               padding={2}
-              transition="all .4s"
+              transition='all .4s'
               _hover={{ borderColor: 'whiteAlpha.800' }}
             />
           </Link>
           <Link
-            aria-label="Assista aos nossos vídeos no YouTube"
-            href="https://www.youtube.com/user/petcompufc/videos"
+            aria-label='Assista aos nossos vídeos no YouTube'
+            href='https://www.youtube.com/user/petcompufc/videos'
             isExternal
           >
             <Icon
               as={RiYoutubeLine}
               boxSize={6}
               borderWidth={2}
-              borderColor="whiteAlpha.400"
-              borderRadius="full"
-              boxSizing="content-box"
+              borderColor='whiteAlpha.400'
+              borderRadius='full'
+              boxSizing='content-box'
               padding={2}
-              transition="all .4s"
+              transition='all .4s'
               _hover={{ borderColor: 'whiteAlpha.800' }}
             />
           </Link>
@@ -163,33 +163,33 @@ export default function Footer() {
       </VStack>
 
       <VStack
-        align="center"
+        align='center'
         display={['none', 'flex']}
         spacing={5}
       >
         <Link
-          href="http://www.ufc.br/"
-          width="15rem"
+          href='http://www.ufc.br/'
+          width='15rem'
           isExternal
         >
           <StaticImage
-            alt="Universidade Federal do Ceará"
+            alt='Universidade Federal do Ceará'
             width={300}
-            src="../images/logo-ufc.svg"
+            src='../images/logo-ufc.svg'
           />
         </Link>
         <Link
-          href="http://portal.dc.ufc.br/"
-          width="15rem"
+          href='http://portal.dc.ufc.br/'
+          width='15rem'
           isExternal
         >
           <StaticImage
-            alt="Departamento de Computação"
+            alt='Departamento de Computação'
             width={300}
-            src="../images/logo-dc.svg"
+            src='../images/logo-dc.svg'
           />
         </Link>
       </VStack>
     </Stack>
-  );
+  )
 }
