@@ -1,0 +1,2 @@
+(self.webpackChunkpetcompufc_github_io=self.webpackChunkpetcompufc_github_io||[]).push([[497],{8534:function(e,t,l){"use strict";l.r(t);var u=l(5007),a=l(5444),c=l(6955),n=l(1783);t.default=function(){return u.default.createElement(c.Z,null,u.default.createElement(n.Z,{title:"Page two"}),u.default.createElement("h1",null,"Hi from the second page"),u.default.createElement("p",null,"Welcome to page 2"),u.default.createElement(a.Link,{to:"/"},"Go back to the homepage"))}}}]);
+//# sourceMappingURL=component---src-pages-page-2-jsx-5fc543f845663c280872.js.map
