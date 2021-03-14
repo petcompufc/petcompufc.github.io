@@ -1,0 +1,132 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders correctly 1`] = `
+<header
+  className="css-0"
+>
+  <nav
+    className="css-186pdcm"
+  >
+    <a
+      className="chakra-link css-1kcvenp"
+      href="/"
+    >
+      <img
+        alt="PET Computação UFC"
+        className="chakra-image__placeholder css-s1rh56"
+      />
+    </a>
+    <button
+      aria-label="Abrir Menu"
+      className="chakra-button css-s3el0a"
+      onClick={[Function]}
+      type="button"
+    >
+      <svg
+        aria-hidden={true}
+        fill="currentColor"
+        focusable={false}
+        height="1em"
+        stroke="currentColor"
+        strokeWidth="0"
+        style={
+          Object {
+            "color": undefined,
+          }
+        }
+        viewBox="0 0 20 20"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clipRule="evenodd"
+          d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+          fillRule="evenodd"
+        />
+      </svg>
+    </button>
+    <div
+      className="css-15ayice"
+      wrap="wrap"
+    >
+      <a
+        className="chakra-link css-42341m"
+        href="/"
+        onClick={[Function]}
+      >
+        <p
+          className="chakra-text css-1cj94m4"
+        >
+          Inicio
+        </p>
+      </a>
+      <a
+        className="chakra-link css-42341m"
+        href="/sobre/"
+        onClick={[Function]}
+      >
+        <p
+          className="chakra-text css-1cj94m4"
+        >
+          Sobre
+        </p>
+      </a>
+      <a
+        className="chakra-link css-42341m"
+        href="/atividades/"
+        onClick={[Function]}
+      >
+        <p
+          className="chakra-text css-1cj94m4"
+        >
+          Atividades
+        </p>
+      </a>
+      <a
+        className="chakra-link css-42341m"
+        href="/blog/"
+        onClick={[Function]}
+      >
+        <p
+          className="chakra-text css-1cj94m4"
+        >
+          Blog
+        </p>
+      </a>
+      <a
+        className="chakra-link css-42341m"
+        href="#"
+        onClick={[Function]}
+      >
+        <p
+          className="chakra-text css-1cj94m4"
+        >
+          Certificados
+        </p>
+      </a>
+      <a
+        className="chakra-link css-42341m"
+        href="/emprestimos/"
+        onClick={[Function]}
+      >
+        <p
+          className="chakra-text css-1cj94m4"
+        >
+          Empréstimos
+        </p>
+      </a>
+      <a
+        className="chakra-link css-42341m"
+        href="/contato/"
+        onClick={[Function]}
+      >
+        <p
+          className="chakra-text css-1cj94m4"
+        >
+          Contato
+        </p>
+      </a>
+    </div>
+  </nav>
+</header>
+`;
