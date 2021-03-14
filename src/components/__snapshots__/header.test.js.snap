@@ -46,85 +46,56 @@ exports[`Header renders correctly 1`] = `
       </svg>
     </button>
     <div
-      className="css-15ayice"
-      wrap="wrap"
+      className="css-1xa6npx"
     >
       <a
-        className="chakra-link css-42341m"
+        className="chakra-link css-1wczksg"
         href="/"
         onClick={[Function]}
       >
-        <p
-          className="chakra-text css-1cj94m4"
-        >
-          Inicio
-        </p>
+        Início
       </a>
       <a
-        className="chakra-link css-42341m"
+        className="chakra-link css-1wczksg"
         href="/sobre/"
         onClick={[Function]}
       >
-        <p
-          className="chakra-text css-1cj94m4"
-        >
-          Sobre
-        </p>
+        Sobre
       </a>
       <a
-        className="chakra-link css-42341m"
+        className="chakra-link css-1wczksg"
         href="/atividades/"
         onClick={[Function]}
       >
-        <p
-          className="chakra-text css-1cj94m4"
-        >
-          Atividades
-        </p>
+        Atividades
       </a>
       <a
-        className="chakra-link css-42341m"
+        className="chakra-link css-1wczksg"
         href="/blog/"
         onClick={[Function]}
       >
-        <p
-          className="chakra-text css-1cj94m4"
-        >
-          Blog
-        </p>
+        Blog
       </a>
       <a
-        className="chakra-link css-42341m"
+        className="chakra-link css-1wczksg"
         href="#"
         onClick={[Function]}
       >
-        <p
-          className="chakra-text css-1cj94m4"
-        >
-          Certificados
-        </p>
+        Certificados
       </a>
       <a
-        className="chakra-link css-42341m"
+        className="chakra-link css-1wczksg"
         href="/emprestimos/"
         onClick={[Function]}
       >
-        <p
-          className="chakra-text css-1cj94m4"
-        >
-          Empréstimos
-        </p>
+        Empréstimos
       </a>
       <a
-        className="chakra-link css-42341m"
+        className="chakra-link css-1wczksg"
         href="/contato/"
         onClick={[Function]}
       >
-        <p
-          className="chakra-text css-1cj94m4"
-        >
-          Contato
-        </p>
+        Contato
       </a>
     </div>
   </nav>

@@ -30,15 +30,12 @@ const NavLink = ({ children, href, onClick }) => (
     alignItems='center'
     p={2}
     transition='0.3s all'
+    fontWeight='semibold'
+    color='red.500'
     _hover={{ bg: '#EDF2F7' }}
     _focus={{ boxShadow: 'none' }}
   >
-    <Text
-      fontWeight='semibold'
-      color='red.500'
-    >
-      {children}
-    </Text>
+    {children}
   </Link>
 )
 
@@ -106,7 +103,7 @@ function Header () {
               PET Computação
             </DrawerHeader>
             <DrawerBody>
-              <NavLink href='/'>Inicio</NavLink>
+              <NavLink href='/'>Início</NavLink>
               <NavLink href='/sobre/'>Sobre</NavLink>
               <NavLink href='/atividades/'>Atividades</NavLink>
               <NavLink href='/blog/'>Blog</NavLink>
@@ -118,8 +115,8 @@ function Header () {
           </DrawerContent>
         </Drawer>
 
-        <Box display={{ base: 'none', lg: 'flex' }} mr={10} wrap='wrap'>
-          <NavLink href='/'>Inicio</NavLink>
+        <Box display={{ base: 'none', lg: 'flex' }} h='100%' mr={10}>
+          <NavLink href='/'>Início</NavLink>
           <NavLink href='/sobre/'>Sobre</NavLink>
           <NavLink href='/atividades/'>Atividades</NavLink>
           <NavLink href='/blog/'>Blog</NavLink>
