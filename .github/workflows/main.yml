@@ -1,23 +1,38 @@
-# This is a basic workflow to help you get started with Actions
+name: Build and Deploy
 
-name: Site
-
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
     paths:
-      - 'src/'
-      - 'gatsby-*.js'
-      - 'package.json'
+        - 'src/'
+        - 'gatsby-*.js'
+        - 'package.json'
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: enriikke/gatsby-gh-pages-action@v2
+      - uses: actions/checkout@v2
+      - name: Setup Node
+        uses: actions/setup-node@v2
         with:
-          access-token: ${{ secrets.ACCESS_TOKEN }}
-          deploy-branch: gh-pages
+          node-version: '14'
+      - name: Cache Gatsby Builds
+        uses: actions/cache@v1
+        id: gatsby-build-cache
+        with:
+          path: |
+            public
+            .cache
+          key: ${{ runner.os }}-gatsby-build-${{ github.run_id }}
+          restore-keys: |
+            ${{ runner.os }}-gatsby-build-
+            
+      - run: npm ci
+      - run: npm run build
+      
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
