@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import {
   Box,
   Button,
@@ -9,55 +9,55 @@ import {
   BreadcrumbItem,
   BreadcrumbLink,
   Heading,
-  Divider
-} from '@chakra-ui/react'
-import { FiChevronRight } from 'react-icons/fi'
+  Divider,
+} from '@chakra-ui/react';
+import { FiChevronRight } from 'react-icons/fi';
 
-import Layout from '../components/layout'
-import Manual from '../ManualdeEmprestimo.pdf'
-import SearchOptimization from '../components/searchOptimization'
+import Layout from '../components/layout';
+import Manual from '../ManualdeEmprestimo.pdf';
+import SearchOptimization from '../components/searchOptimization';
 
-export default function Emprestimo () {
+export default function Emprestimo() {
   return (
     <Layout>
       <SearchOptimization
-        title='Empréstimos'
-        description='Veja como funciona o sistema de empréstimos do PET Computação'
+        title="Empréstimos"
+        description="Veja como funciona o sistema de empréstimos do PET Computação"
       />
       <Box
-        padding='2%'
-        fontFamily='Open Sans'
+        padding="2%"
+        fontFamily="Open Sans"
       >
         <Heading
-          as='h2'
-          color='#263238'
-          mt='6%'
-          mb='1%'
+          as="h2"
+          color="#263238"
+          mt="6%"
+          mb="1%"
         >
           Empréstimos
         </Heading>
 
-        <Divider borderColor='#e0e0e0' />
+        <Divider borderColor="#e0e0e0" />
 
         <Breadcrumb
-          spacing='8px'
-          fontWeight='bold'
-          fontSize='16px'
-          separator={<Icon as={FiChevronRight} color='gray.400' size='1em' />}
+          spacing="8px"
+          fontWeight="bold"
+          fontSize="16px"
+          separator={<Icon as={FiChevronRight} color="gray.400" size="1em" />}
         >
           <BreadcrumbItem>
-            <BreadcrumbLink color='#d50000' href='/'>Página Inicial</BreadcrumbLink>
+            <BreadcrumbLink color="#d50000" href="/">Página Inicial</BreadcrumbLink>
           </BreadcrumbItem>
 
           <BreadcrumbItem isCurrentPage>
-            <BreadcrumbLink color='#A9A9A9' href='/emprestimos'>Empréstimos</BreadcrumbLink>
+            <BreadcrumbLink color="#A9A9A9" href="/emprestimos">Empréstimos</BreadcrumbLink>
           </BreadcrumbItem>
 
         </Breadcrumb>
       </Box>
 
       <Text
-        maxWidth='50em'
+        maxWidth="50em"
         mt={1}
         mb={4}
       >
@@ -66,14 +66,14 @@ export default function Emprestimo () {
         livre uso e uso restrito.
       </Text>
       <Text
-        maxWidth='50em'
+        maxWidth="50em"
         mb={4}
       >
         Para pegar um desses itens emprestado por tempo limitado, basta preencher o formulário e
         entregar a um petiano na sala do PET, que avaliaremos a solicitação.
       </Text>
       <Text
-        maxWidth='50em'
+        maxWidth="50em"
         mb={4}
       >
         Caso deseje um item que já foi emprestado, há a possibilidade de entrar para a fila de
@@ -82,7 +82,7 @@ export default function Emprestimo () {
         possível solicitar a renovação do empréstimo, porém com o máximo de 5 vezes.
       </Text>
       <Text
-        maxWidth='50em'
+        maxWidth="50em"
         mb={4}
       >
         Importante informar que prezamos bastante pela integridade dos itens, assim como com prazos
@@ -90,7 +90,7 @@ export default function Emprestimo () {
         usuário e ele não poderá realizar empréstimos futuros.
       </Text>
       <Text
-        maxWidth='50em'
+        maxWidth="50em"
         mb={4}
       >
         Se deseja saber mais detalhes, ou até mesmo imprimir o formulário de empréstimo, acesse o
@@ -99,11 +99,11 @@ export default function Emprestimo () {
       <Button
         _hover={{ bg: '#a40000' }}
         _active={{ bg: '#8b0000' }}
-        colorScheme='red'
+        colorScheme="red"
       >
-        <Link color='white' href={Manual} isExternal> Manual de Empréstimos </Link>
+        <Link color="white" href={Manual} isExternal> Manual de Empréstimos </Link>
       </Button>
 
     </Layout>
-  )
+  );
 }

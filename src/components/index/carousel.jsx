@@ -1,131 +1,131 @@
-import React, { useState, useEffect } from 'react'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import PropTypes from 'prop-types'
+import React, { useState, useEffect } from 'react';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import PropTypes from 'prop-types';
 import {
   Box,
   IconButton,
   Image,
-  Heading
-} from '@chakra-ui/react'
+  Heading,
+} from '@chakra-ui/react';
 import {
   GrPrevious,
   GrNext,
   GrLock,
-  GrUnlock
-} from 'react-icons/gr'
+  GrUnlock,
+} from 'react-icons/gr';
 
-function Carousel ({ slides }) {
-  const [isLocked, setLocked] = useState(false)
-  const [slideIndex, setSlideIndex] = useState(0)
+function Carousel({ slides }) {
+  const [isLocked, setLocked] = useState(false);
+  const [slideIndex, setSlideIndex] = useState(0);
 
-  const nextSlide = () => setSlideIndex(slideIndex >= (slides.length - 1) ? 0 : (slideIndex + 1))
-  const prevSlide = () => setSlideIndex(slideIndex <= 0 ? (slides.length - 1) : (slideIndex - 1))
+  const nextSlide = () => setSlideIndex(slideIndex >= (slides.length - 1) ? 0 : (slideIndex + 1));
+  const prevSlide = () => setSlideIndex(slideIndex <= 0 ? (slides.length - 1) : (slideIndex - 1));
 
   useEffect(() => {
     if (!isLocked) {
-      const i = setInterval(nextSlide, 6000)
-      return () => clearInterval(i)
+      const i = setInterval(nextSlide, 6000);
+      return () => clearInterval(i);
     }
-    return () => { }
-  })
+    return () => { };
+  });
 
   return (
     <Box
-      aria-atomic='false'
-      aria-label='masthead'
+      aria-atomic="false"
+      aria-label="masthead"
       aria-live={isLocked ? 'polite' : 'off'}
-      aria-roledescription='carousel'
+      aria-roledescription="carousel"
       borderRadius={8}
-      height='lg'
-      maxWidth='4xl'
-      mx='auto'
+      height="lg"
+      maxWidth="4xl"
+      mx="auto"
       my={3}
-      overflow='hidden'
-      pos='relative'
-      role='group'
-      width='100%'
+      overflow="hidden"
+      pos="relative"
+      role="group"
+      width="100%"
       sx={{ '-webkit-mask-image': '-webkit-radial-gradient(white, black)' }}
     >
       {slides.map((slide, index) => {
-        const image = getImage(slide.image)
+        const image = getImage(slide.image);
         return (
           <Box
-            aria-roledescription='slide'
+            aria-roledescription="slide"
             aria-hidden={slideIndex === index ? 'false' : 'true'}
-            h='100%'
+            h="100%"
             key={slide.desc}
-            left='0'
-            overflow='hidden'
-            pos='absolute'
+            left="0"
+            overflow="hidden"
+            pos="absolute"
             transform={`translateX(${(index - slideIndex) * 100}%)`}
-            transition='all 0.5s 250ms ease-out'
-            top='0'
-            w='100%'
+            transition="all 0.5s 250ms ease-out"
+            top="0"
+            w="100%"
           >
             <Image
               alt={slide.desc}
               as={GatsbyImage}
-              h='100%'
+              h="100%"
               image={image}
               left={0}
-              pos='absolute'
+              pos="absolute"
             />
             <Heading
-              as='h3'
-              bg='rgba(0, 0, 0, 0.4)'
-              l='0'
-              t='0'
+              as="h3"
+              bg="rgba(0, 0, 0, 0.4)"
+              l="0"
+              t="0"
               p={2}
-              color='white'
-              fontSize='4xl'
-              pos='absolute'
-              w='100%'
+              color="white"
+              fontSize="4xl"
+              pos="absolute"
+              w="100%"
             >
               {slide.text}
             </Heading>
           </Box>
-        )
+        );
       })}
       <IconButton
-        colorScheme='red'
-        aria-label='Go to previous slide'
+        colorScheme="red"
+        aria-label="Go to previous slide"
         icon={<GrPrevious />}
         onClick={prevSlide}
         isRound
-        pos='absolute'
+        pos="absolute"
         left={2}
-        top='0'
-        bottom='0'
-        my='auto'
-        size='sm'
+        top="0"
+        bottom="0"
+        my="auto"
+        size="sm"
       />
       <IconButton
-        colorScheme='red'
+        colorScheme="red"
         aria-label={isLocked ? 'Start slide rotation' : 'Stop slide rotation'}
         icon={isLocked ? <GrLock /> : <GrUnlock />}
         onClick={() => setLocked(!isLocked)}
         isRound
-        pos='absolute'
-        left='50%'
-        transform='translateX(-50%)'
-        size='md'
+        pos="absolute"
+        left="50%"
+        transform="translateX(-50%)"
+        size="md"
         bottom={2}
       />
       <IconButton
-        colorScheme='red'
-        aria-label='Go to next slide'
+        colorScheme="red"
+        aria-label="Go to next slide"
         icon={<GrNext />}
         onClick={nextSlide}
         isRound
-        pos='absolute'
+        pos="absolute"
         right={2}
-        top='0'
-        bottom='0'
-        my='auto'
-        size='sm'
+        top="0"
+        bottom="0"
+        my="auto"
+        size="sm"
       />
     </Box>
-  )
+  );
 }
 
 Carousel.propTypes = {
@@ -139,22 +139,22 @@ Carousel.propTypes = {
             fallback: PropTypes.shape({
               src: PropTypes.string,
               srcSet: PropTypes.string,
-              size: PropTypes.string
+              size: PropTypes.string,
             }),
             sources: PropTypes.arrayOf(PropTypes.shape({
               srcSet: PropTypes.string,
               type: PropTypes.string,
-              sizes: PropTypes.string
+              sizes: PropTypes.string,
             })),
             widht: PropTypes.integer,
-            height: PropTypes.integer
-          })
-        })
-      })
+            height: PropTypes.integer,
+          }),
+        }),
+      }),
     }),
     desc: PropTypes.string,
-    text: PropTypes.string
-  })).isRequired
-}
+    text: PropTypes.string,
+  })).isRequired,
+};
 
-export default Carousel
+export default Carousel;

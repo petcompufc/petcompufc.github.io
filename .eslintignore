@@ -1,9 +1,12 @@
 .cache
 package.json
 package-lock.json
+node_modules
 public
+LICENSE
 *.css
 *.png
 *.pdf
 *.svg
 *.jpg
+*.MD

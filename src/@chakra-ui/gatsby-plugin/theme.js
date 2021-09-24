@@ -1,9 +1,9 @@
-import { extendTheme } from '@chakra-ui/react'
+import { extendTheme } from '@chakra-ui/react';
 
 const theme = extendTheme({
   fonts: {
     body: '"Open Sans", sans-serif',
-    heading: '"Open Sans", sans-serif'
+    heading: '"Open Sans", sans-serif',
   },
   styles: {
     global: {
@@ -11,10 +11,10 @@ const theme = extendTheme({
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
-        minH: '100vh'
-      }
-    }
-  }
-})
+        minH: '100vh',
+      },
+    },
+  },
+});
 
-export default theme
+export default theme;
