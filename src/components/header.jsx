@@ -5,7 +5,6 @@ import {
   Box,
   Link,
   Flex,
-  Image,
   useDisclosure,
   Drawer,
   DrawerOverlay,
@@ -16,9 +15,8 @@ import {
   DrawerCloseButton,
 } from '@chakra-ui/react';
 import { HiMenu } from 'react-icons/hi';
-
+import { StaticImage } from 'gatsby-plugin-image';
 import Modal from './modal';
-import logo from '../images/logo-pet-red.png';
 
 const NavLink = ({ children, href, onClick }) => (
   <Link
@@ -56,25 +54,25 @@ function Header() {
   return (
     <Box
       as="header"
+      pos="sticky"
+      top="0"
+      zIndex="sticky"
     >
-      <Flex alignItems="center" as="nav" w="100%" bg="white" boxShadow="md" justify="space-between">
-        <Link
-          as={GatsbyLink}
-          to="/"
-          my={2}
-          ml={10}
-          maxW="3rem"
-          _hover={{
-            transform: 'rotate(25deg)',
-          }}
-        >
-          <Image
-            src={logo}
+      <Flex
+        alignItems="center"
+        as="nav"
+        bg="white"
+        boxShadow="md"
+        h={16}
+        justify="space-between"
+        w="100%"
+      >
+        <Box ml={3} w={12}>
+          <StaticImage
             alt="PET Computação UFC"
-            backgroundSize="contain"
-            m="0"
+            src="../images/logo-pet-red.png"
           />
-        </Link>
+        </Box>
 
         <IconButton
           aria-label="Abrir Menu"
