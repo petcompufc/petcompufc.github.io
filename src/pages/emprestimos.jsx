@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   Box,
-  Button,
+  Container,
   Text,
   Link,
   Icon,
@@ -30,7 +30,6 @@ export default function Emprestimo() {
       >
         <Heading
           as="h2"
-          color="#263238"
           mt="6%"
           mb="1%"
         >
@@ -94,15 +93,12 @@ export default function Emprestimo() {
         mb={4}
       >
         Se deseja saber mais detalhes, ou até mesmo imprimir o formulário de empréstimo, acesse o
-        manual.
+        manual abaixo
       </Text>
-      <Button
-        _hover={{ bg: '#a40000' }}
-        _active={{ bg: '#8b0000' }}
-        colorScheme="red"
-      >
-        <Link color="white" href={Manual} isExternal> Manual de Empréstimos </Link>
-      </Button>
+
+      <Container as="object" data={Manual} maxW="container.sm" minH="container.sm" type="application/pdf">
+        <Link href={Manual} isExternal> Manual de Empréstimos </Link>
+      </Container>
 
     </Layout>
   );

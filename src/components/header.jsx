@@ -5,6 +5,7 @@ import {
   Box,
   Link,
   Flex,
+  useColorModeValue,
   useDisclosure,
   Drawer,
   DrawerOverlay,
@@ -28,8 +29,8 @@ const NavLink = ({ children, href, onClick }) => (
     p={2}
     transition="0.3s all"
     fontWeight="semibold"
-    color="red.500"
-    _hover={{ bg: '#EDF2F7' }}
+    color={useColorModeValue('red.500', 'white')}
+    _hover={{ bg: useColorModeValue('gray.100', 'gray.800') }}
     _focus={{ boxShadow: 'none' }}
   >
     {children}
@@ -61,7 +62,7 @@ function Header() {
       <Flex
         alignItems="center"
         as="nav"
-        bg="white"
+        bg={useColorModeValue('white', 'blue.900')}
         boxShadow="md"
         h={16}
         justify="space-between"

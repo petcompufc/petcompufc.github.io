@@ -1,5 +1,5 @@
 import {
-  Avatar, Box, CloseButton, Flex, Heading,
+  useColorModeValue, Avatar, Box, CloseButton, Flex, Heading,
 } from '@chakra-ui/react';
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -10,7 +10,7 @@ const Atividade = ({ name, img, lore }) => {
   return (
     <Box m="16px" w="280px" h="310px" overflow="hidden">
       <Flex>
-        <Heading as="h3" mx="auto" fontSize="32px">
+        <Heading as="h3" mx="auto" fontSize="xl">
           {name}
         </Heading>
       </Flex>
@@ -22,7 +22,7 @@ const Atividade = ({ name, img, lore }) => {
           h="256px"
           pt="24px"
           ml="8px"
-          bg="#fff"
+          bg={useColorModeValue('white', 'black')}
           boxShadow="#000000aa 1px 1px 2px"
           onClick={() => setTop('-100%')}
           _hover={{ cursor: 'pointer' }}

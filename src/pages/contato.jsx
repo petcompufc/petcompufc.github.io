@@ -45,7 +45,7 @@ export default function Contato() {
         description="Entre em contato com o PET Computação digitalmente"
       />
       <Box paddingX="2%">
-        <Heading as="h2" color="#263238" marginTop="6%" mb="1%">Contato</Heading>
+        <Heading as="h2" marginTop="6%" mb="1%">Contato</Heading>
         <Divider />
         <Breadcrumb
           spacing="8px"

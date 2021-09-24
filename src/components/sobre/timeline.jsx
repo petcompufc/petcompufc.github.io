@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import {
+  useColorModeValue,
   Heading,
   List,
   ListItem,
@@ -11,7 +12,7 @@ import {
 const Evento = ({ children }) => (
   <ListItem
     borderRadius={5}
-    bg="white"
+    bg={useColorModeValue('white', 'blue.900')}
     boxShadow="md"
     p={3}
     pos="relative"
@@ -19,7 +20,7 @@ const Evento = ({ children }) => (
     my={3}
     maxW="50em"
     transition="all .4s"
-    _even={{ backgroundColor: 'red.100' }}
+    _even={{ backgroundColor: useColorModeValue('red.200', 'red.800') }}
     _hover={{
       boxShadow: 'lg',
       transform: 'translateY(-10px)',
@@ -50,19 +51,17 @@ Evento.propTypes = {
 const Timeline = ({ eventos }) => (
   <List
     as="ol"
-    css={{
-      '&:before': {
-        background: 'red',
-        content: "''",
-        position: 'absolute',
-        left: -2,
-        width: 4,
-        height: '100%',
-      },
-    }}
     maxWidth="fit-content"
     mx="auto"
     position="relative"
+    _before={{
+      bg: 'red.500',
+      content: "''",
+      position: 'absolute',
+      left: '-2px',
+      width: '4px',
+      height: '100%',
+    }}
   >
     {eventos.map((evento) => (
       <Evento key={evento.acontecimento}>

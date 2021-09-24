@@ -28,7 +28,6 @@ const Atividades = () => {
   const BreadCrumb = ({ children }) => (
     <Box paddingX="2%" borderRadius="16px">
       <Heading
-        color="#263238"
         mt="6%"
         mb="1%"
       >
@@ -96,8 +95,7 @@ const Atividades = () => {
       <Text
         paddingX="2%"
         borderRadius="16px"
-        color="#666"
-        maxWidth="50em"
+        maxWidth="90ch"
         textAlign="justify"
       >
         O Pet realiza atividades voltadas para toda a comunidade de computação, seja dentro ou fora
