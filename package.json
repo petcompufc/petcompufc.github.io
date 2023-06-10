@@ -10,7 +10,7 @@
     "@emotion/styled": "^11.3.0",
     "@fontsource/open-sans": "^4.2.1",
     "framer-motion": "^4.1.17",
-    "gatsby": "^3.0.0",
+    "gatsby": "^4.25.7",
     "gatsby-plugin-image": "^1.0.0",
     "gatsby-plugin-manifest": "^3.0.0",
     "gatsby-plugin-offline": "^4.0.0",
